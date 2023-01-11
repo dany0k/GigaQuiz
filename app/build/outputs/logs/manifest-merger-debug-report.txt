@@ -12,8 +12,8 @@ MERGED from [com.google.android.material:material:1.7.0] C:\Users\Den\.gradle\ca
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Den\.gradle\caches\transforms-3\229612c218d9fe79705dc19c7f400585\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.5.1] C:\Users\Den\.gradle\caches\transforms-3\21755dfb125ba8aca0d81387a0fbc842\transformed\appcompat-resources-1.5.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.5.1] C:\Users\Den\.gradle\caches\transforms-3\034f511a629c0fda711794a09fef4382\transformed\appcompat-1.5.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\0bea4f20ff29811a8e76c6627f3159cd\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Den\.gradle\caches\transforms-3\b975d4bc4d6d45f491a86fff0fa3caaf\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\0bea4f20ff29811a8e76c6627f3159cd\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment-ktx:1.5.4] C:\Users\Den\.gradle\caches\transforms-3\daa1b4523746cd368aaecd021ba95c90\transformed\fragment-ktx-1.5.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Den\.gradle\caches\transforms-3\7fb7a9d9719644aa92307e4a48cf7b3d\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\1a0d66477170a0140ee88080e6a4bba1\transformed\navigation-runtime-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
@@ -161,10 +161,10 @@ MERGED from [androidx.appcompat:appcompat-resources:1.5.1] C:\Users\Den\.gradle\
 MERGED from [androidx.appcompat:appcompat-resources:1.5.1] C:\Users\Den\.gradle\caches\transforms-3\21755dfb125ba8aca0d81387a0fbc842\transformed\appcompat-resources-1.5.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.5.1] C:\Users\Den\.gradle\caches\transforms-3\034f511a629c0fda711794a09fef4382\transformed\appcompat-1.5.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.5.1] C:\Users\Den\.gradle\caches\transforms-3\034f511a629c0fda711794a09fef4382\transformed\appcompat-1.5.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\0bea4f20ff29811a8e76c6627f3159cd\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\0bea4f20ff29811a8e76c6627f3159cd\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Den\.gradle\caches\transforms-3\b975d4bc4d6d45f491a86fff0fa3caaf\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Den\.gradle\caches\transforms-3\b975d4bc4d6d45f491a86fff0fa3caaf\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\0bea4f20ff29811a8e76c6627f3159cd\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\0bea4f20ff29811a8e76c6627f3159cd\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment-ktx:1.5.4] C:\Users\Den\.gradle\caches\transforms-3\daa1b4523746cd368aaecd021ba95c90\transformed\fragment-ktx-1.5.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment-ktx:1.5.4] C:\Users\Den\.gradle\caches\transforms-3\daa1b4523746cd368aaecd021ba95c90\transformed\fragment-ktx-1.5.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Den\.gradle\caches\transforms-3\7fb7a9d9719644aa92307e4a48cf7b3d\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41

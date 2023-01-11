@@ -18,6 +18,7 @@ import java.util.List;
 import ru.vsu.cs.zmaev.databinding.ActivityMainBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentGameBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentGameOverBindingImpl;
+import ru.vsu.cs.zmaev.databinding.FragmentGameResultBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentGameWonBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentTitleBindingImpl;
 
@@ -28,16 +29,19 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTGAMEOVER = 3;
 
-  private static final int LAYOUT_FRAGMENTGAMEWON = 4;
+  private static final int LAYOUT_FRAGMENTGAMERESULT = 4;
 
-  private static final int LAYOUT_FRAGMENTTITLE = 5;
+  private static final int LAYOUT_FRAGMENTGAMEWON = 5;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);
+  private static final int LAYOUT_FRAGMENTTITLE = 6;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game, LAYOUT_FRAGMENTGAME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game_over, LAYOUT_FRAGMENTGAMEOVER);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game_result, LAYOUT_FRAGMENTGAMERESULT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game_won, LAYOUT_FRAGMENTGAMEWON);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_title, LAYOUT_FRAGMENTTITLE);
   }
@@ -68,6 +72,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentGameOverBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_game_over is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTGAMERESULT: {
+          if ("layout/fragment_game_result_0".equals(tag)) {
+            return new FragmentGameResultBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_game_result is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTGAMEWON: {
           if ("layout/fragment_game_won_0".equals(tag)) {
@@ -126,21 +136,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(2);
+    static final SparseArray<String> sKeys = new SparseArray<String>(3);
 
     static {
       sKeys.put(0, "_all");
       sKeys.put(1, "game");
+      sKeys.put(2, "viewModel");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(5);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
 
     static {
       sKeys.put("layout/activity_main_0", ru.vsu.cs.zmaev.R.layout.activity_main);
       sKeys.put("layout/fragment_game_0", ru.vsu.cs.zmaev.R.layout.fragment_game);
       sKeys.put("layout/fragment_game_over_0", ru.vsu.cs.zmaev.R.layout.fragment_game_over);
+      sKeys.put("layout/fragment_game_result_0", ru.vsu.cs.zmaev.R.layout.fragment_game_result);
       sKeys.put("layout/fragment_game_won_0", ru.vsu.cs.zmaev.R.layout.fragment_game_won);
       sKeys.put("layout/fragment_title_0", ru.vsu.cs.zmaev.R.layout.fragment_title);
     }
