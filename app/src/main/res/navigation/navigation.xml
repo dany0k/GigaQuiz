@@ -29,6 +29,9 @@
             app:destination="@id/gameWonFragment"
             app:popUpTo="@+id/gameFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameResultFragment"
+            app:destination="@id/gameResultFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameOverFragment"
@@ -68,4 +71,12 @@
         android:name="ru.vsu.cs.zmaev.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/gameResultFragment"
+        android:name="ru.vsu.cs.zmaev.GameResultFragment"
+        android:label="GameResultFragment" >
+        <action
+            android:id="@+id/action_gameResultFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>
