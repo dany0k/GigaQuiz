@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
@@ -17,8 +19,11 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
+import ru.vsu.cs.zmaev.model.AnswersViewModel;
 
 public class GameFragment extends Fragment {
+
+    public AnswersViewModel sharedViewModel;
     public GameFragment() {
         super(R.layout.fragment_game);
     }
@@ -44,6 +49,8 @@ public class GameFragment extends Fragment {
     public int questionIndex = 0;
     public float questionNum = Math.min((questions.size() + 1) / 2, 3);
 
+    private int correctAnswersCounter = 0;
+    private int incorrectAnswersCounter = 0;
 
 
     @Nullable
@@ -51,6 +58,7 @@ public class GameFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         FragmentGameBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
+        sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         randomizeQuestions();
         binding.setGame(GameFragment.this);
         binding.submitButton.setOnClickListener(view -> {
@@ -68,21 +76,27 @@ public class GameFragment extends Fragment {
                         answerIndex = 3;
                         break;
                 }
-
                 if (answers.get(answerIndex).equals(correctAnswer)) {
+                    correctAnswersCounter++;
+                } else {
+                    incorrectAnswersCounter++;
+                }
+                if (questionIndex <= questionNum) {
+                    currentQuestion = questions.get(questionIndex);
+                    setQuestion();
+                    binding.invalidateAll();
                     questionIndex++;
-
-                    if (questionIndex <= questionNum) {
-                        currentQuestion = questions.get(questionIndex);
-                        setQuestion();
-                        binding.invalidateAll();
-                    } else {
+                } else {
+                    sharedViewModel.setCorrectAnswers(correctAnswersCounter);
+                    sharedViewModel.setIncorrectAnswers(incorrectAnswersCounter);
+                    System.out.printf("\n\n\nC:%s I:%s", correctAnswersCounter, incorrectAnswersCounter);
+                    if (correctAnswersCounter > incorrectAnswersCounter) {
                         Navigation.findNavController(view)
                                 .navigate(R.id.action_gameFragment_to_gameWonFragment);
+                    } else {
+                        Navigation.findNavController(view)
+                                .navigate(R.id.action_gameFragment_to_gameResultFragment);
                     }
-                } else {
-                    Navigation.findNavController(view)
-                            .navigate(R.id.action_gameFragment_to_gameOverFragment);
                 }
             }
         });
