@@ -4,19 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
@@ -55,7 +52,7 @@ public class GameFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         FragmentGameBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
         randomizeQuestions();
-        binding.setGame(this);
+        binding.setGame(GameFragment.this);
         binding.submitButton.setOnClickListener(view -> {
             int checkedId = binding.questionRadioGroup.getCheckedRadioButtonId();
             if (-1 != checkedId) {
@@ -80,11 +77,12 @@ public class GameFragment extends Fragment {
                         setQuestion();
                         binding.invalidateAll();
                     } else {
-                        Toast.makeText(getContext(), "Разъебал", Toast.LENGTH_LONG).show();
-                        // TODO: Navigation
+                        Navigation.findNavController(view)
+                                .navigate(R.id.action_gameFragment_to_gameWonFragment);
                     }
                 } else {
-                    Toast.makeText(getContext(), "Проебал", Toast.LENGTH_LONG).show();
+                    Navigation.findNavController(view)
+                            .navigate(R.id.action_gameFragment_to_gameOverFragment);
                 }
             }
         });

@@ -4,21 +4,33 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
-//import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
+import kotlin.Suppress;
+import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private ActivityMainBinding binding;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-//    }
+    DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        @Suppress(names = "UNUSED_VARIABLE")
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        drawerLayout = binding.drawerLayout;
+
+        NavController navController = Navigation.findNavController(this, R.id.myNavHostFragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout);
+        NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.myNavHostFragment);
+        return NavigationUI.navigateUp(navController, drawerLayout);
     }
 }
