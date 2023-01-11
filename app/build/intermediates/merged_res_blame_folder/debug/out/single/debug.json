@@ -16,10 +16,6 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\share.xml"
     },
     {
-        "merged": "ru.vsu.cs.zmaev.app-merged_res-46:/layout_fragment_game_over.xml.flat",
-        "source": "ru.vsu.cs.zmaev.app-main-48:/layout/fragment_game_over.xml"
-    },
-    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_nav_header.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\nav_header.xml"
     },
@@ -48,6 +44,10 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\navigation\\navigation.xml"
     },
     {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\layout_fragment_game_result.xml.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\layout\\fragment_game_result.xml"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_android_category_simple.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\android_category_simple.xml"
     },
@@ -58,6 +58,10 @@
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_android_trivia.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\android_trivia.xml"
+    },
+    {
+        "merged": "ru.vsu.cs.zmaev.app-merged_res-46:/layout_fragment_game_result.xml.flat",
+        "source": "ru.vsu.cs.zmaev.app-main-48:/layout/fragment_game_result.xml"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_about_android_trivia.xml.flat",

@@ -1876,6 +1876,7 @@ color primary_text_disabled_material_light
 color purple_200
 color purple_500
 color purple_700
+color resultGameColor
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2776,8 +2777,10 @@ id action_container
 id action_context_bar
 id action_divider
 id action_gameFragment_to_gameOverFragment
+id action_gameFragment_to_gameResultFragment
 id action_gameFragment_to_gameWonFragment
 id action_gameOverFragment_to_gameFragment
+id action_gameResultFragment_to_titleFragment
 id action_gameWonFragment_to_gameFragment
 id action_image
 id action_menu_divider
@@ -2925,6 +2928,7 @@ id fullscreen_header
 id gameFragment
 id gameOverConstraintLayout
 id gameOverFragment
+id gameResultFragment
 id gameWonConstraintLayout
 id gameWonFragment
 id ghost_view
@@ -3382,6 +3386,7 @@ layout design_text_input_start_icon
 layout fragment_about
 layout fragment_game
 layout fragment_game_over
+layout fragment_game_result
 layout fragment_game_won
 layout fragment_rules
 layout fragment_title

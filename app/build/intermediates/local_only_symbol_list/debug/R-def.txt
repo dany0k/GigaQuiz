@@ -8,6 +8,7 @@ color gameOverBackground
 color purple_200
 color purple_500
 color purple_700
+color resultGameColor
 color teal_200
 color teal_700
 color white
@@ -39,8 +40,10 @@ drawable you_win
 id aboutFragment
 id aboutImage
 id action_gameFragment_to_gameOverFragment
+id action_gameFragment_to_gameResultFragment
 id action_gameFragment_to_gameWonFragment
 id action_gameOverFragment_to_gameFragment
+id action_gameResultFragment_to_titleFragment
 id action_gameWonFragment_to_gameFragment
 id action_titleFragment_to_gameFragment
 id drawerLayout
@@ -50,6 +53,7 @@ id frameLayout
 id gameFragment
 id gameOverConstraintLayout
 id gameOverFragment
+id gameResultFragment
 id gameWonConstraintLayout
 id gameWonFragment
 id myNavHostFragment
@@ -79,6 +83,7 @@ layout activity_main
 layout fragment_about
 layout fragment_game
 layout fragment_game_over
+layout fragment_game_result
 layout fragment_game_won
 layout fragment_rules
 layout fragment_title
