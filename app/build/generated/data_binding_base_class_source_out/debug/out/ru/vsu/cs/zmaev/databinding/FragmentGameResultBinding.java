@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -25,16 +26,21 @@ public abstract class FragmentGameResultBinding extends ViewDataBinding {
   public final Button nextMatchButton;
 
   @NonNull
+  public final TextView textView;
+
+  @NonNull
   public final ImageView youWinImage;
 
   @Bindable
   protected GameResultFragment mViewModel;
 
   protected FragmentGameResultBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ConstraintLayout gameWonConstraintLayout, Button nextMatchButton, ImageView youWinImage) {
+      ConstraintLayout gameWonConstraintLayout, Button nextMatchButton, TextView textView,
+      ImageView youWinImage) {
     super(_bindingComponent, _root, _localFieldCount);
     this.gameWonConstraintLayout = gameWonConstraintLayout;
     this.nextMatchButton = nextMatchButton;
+    this.textView = textView;
     this.youWinImage = youWinImage;
   }
 

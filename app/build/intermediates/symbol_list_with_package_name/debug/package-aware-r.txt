@@ -3124,7 +3124,6 @@ id secondAnswerRadioButton
 id select_dialog_listview
 id selected
 id selection_type
-id share
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3187,6 +3186,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
@@ -3451,7 +3451,6 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu navdrawer_menu
 menu options_menu
-menu winner_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation navigation
@@ -3507,7 +3506,6 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string game_over
 string giga_quiz
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -3600,6 +3598,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string next_match
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -3610,9 +3609,6 @@ string rules
 string rules_text
 string search_menu_title
 string select_an_avatar
-string share
-string share_success_text
-string sharing_not_available
 string status_bar_notification_info_overflow
 string submit_button
 string title_about_trivia
@@ -3621,6 +3617,7 @@ string title_play
 string title_quiz_rules
 string trivia_hint
 string try_again
+string your_result
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

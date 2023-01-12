@@ -18,8 +18,6 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
         sViewsWithIds.put(R.id.youWinImage, 3);
     }
     // views
-    @NonNull
-    private final android.widget.TextView mboundView1;
     // variables
     // values
     // listeners
@@ -32,11 +30,11 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.Button) bindings[2]
+            , (android.widget.TextView) bindings[1]
             , (android.widget.ImageView) bindings[3]
             );
         this.gameWonConstraintLayout.setTag(null);
-        this.mboundView1 = (android.widget.TextView) bindings[1];
-        this.mboundView1.setTag(null);
+        this.textView.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -111,7 +109,7 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView1, viewModelSendAnswers);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textView, viewModelSendAnswers);
         }
     }
     // Listener Stub Implementations
