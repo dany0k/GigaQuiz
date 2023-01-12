@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#1B434D</color>
+    <color name="colorSecondaryDark">#143038</color>
     <color name="colorAccent">#7e53c5</color>
     <color name="youWinDark">#35A571</color>
     <color name="youWinBackground">#B7F8C9</color>
