@@ -8,6 +8,6 @@
         android:title="@string/rules" />
     <item
         android:id="@+id/aboutFragment"
-        android:icon="@drawable/about_android_trivia"
+        android:icon="@drawable/giga_quiz_logo"
         android:title="@string/about" />
 </menu>

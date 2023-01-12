@@ -1,11 +1,15 @@
 [
     {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-debug-47:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "ru.vsu.cs.zmaev.app-merged_res-46:/drawable_austria.xml.flat",
+        "source": "ru.vsu.cs.zmaev.app-main-48:/drawable/austria.xml"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_nav_header.xml.flat",
@@ -28,6 +32,10 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-debug-47:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-hdpi_earth.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-hdpi\\earth.png"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_trivia_rules.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\trivia_rules.xml"
     },
@@ -44,6 +52,14 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\android_trivia.xml"
     },
     {
+        "merged": "ru.vsu.cs.zmaev.app-merged_res-46:/drawable_city.xml.flat",
+        "source": "ru.vsu.cs.zmaev.app-main-48:/drawable/city.xml"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-xxhdpi_earth.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-xxhdpi\\earth.png"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-debug-47:\\mipmap-hdpi\\ic_launcher.png"
     },
@@ -56,16 +72,28 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\layout\\fragment_geographical_game.xml"
     },
     {
-        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_try_again.xml.flat",
-        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\try_again.xml"
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-anydpi-v26_ar.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-anydpi-v26\\ar.png"
+    },
+    {
+        "merged": "ru.vsu.cs.zmaev.app-merged_res-46:/drawable_mountain.xml.flat",
+        "source": "ru.vsu.cs.zmaev.app-main-48:/drawable/mountain.xml"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\layout_nav_header.xml.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\layout\\nav_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-mdpi_earth.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-mdpi\\earth.png"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\layout-v28_fragment_game.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\layout-v28\\fragment_game.xml"
     },
     {
-        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\layout_nav_header.xml.flat",
-        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\layout\\nav_header.xml"
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_try_again.xml.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\try_again.xml"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\xml_backup_rules.xml.flat",
@@ -74,6 +102,10 @@
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_settings.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-ldpi_earth.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-ldpi\\earth.png"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -98,6 +130,10 @@
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-debug-47:\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-anydpi-v24_earth.xml.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-anydpi-v24\\earth.xml"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -132,6 +168,10 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-xxxhdpi_earth.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-xxxhdpi\\earth.png"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\layout_fragment_about.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\layout\\fragment_about.xml"
     },
@@ -148,12 +188,20 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\menu\\options_menu.xml"
     },
     {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-anydpi-v26_earth.jpg.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-anydpi-v26\\earth.jpg"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-debug-47:\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-v24_share.xml.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable-v24\\share.xml"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable-xhdpi_earth.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-pngs-41:\\drawable-xhdpi\\earth.png"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable_giga_quiz_logo.xml.flat",
@@ -196,6 +244,10 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\menu\\navdrawer_menu.xml"
     },
     {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\drawable_argentina_flag.xml.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\drawable\\argentina_flag.xml"
+    },
+    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -220,10 +272,6 @@
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "ru.vsu.cs.zmaev.app-merged_res-46:/layout_fragment_title.xml.flat",
-        "source": "ru.vsu.cs.zmaev.app-main-48:/layout/fragment_title.xml"
-    },
-    {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -238,6 +286,10 @@
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\mipmap-anydpi-v26_argentina_flag.png.flat",
+        "source": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-main-48:\\mipmap-anydpi-v26\\argentina_flag.png"
     },
     {
         "merged": "C:\\Users\\Den\\.gradle\\daemon\\7.4\\ru.vsu.cs.zmaev.app-merged_res-46:\\layout_fragment_game.xml.flat",

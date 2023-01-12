@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nav_header"
+        app:srcCompat="@drawable/giga_quiz_logo"
         android:contentDescription="@string/description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -111,7 +111,7 @@ public class FragmentGeographicalGameBindingImpl extends FragmentGeographicalGam
         java.lang.String gameAnswers3 = null;
         java.lang.String gameAnswers0 = null;
         java.lang.String gameAnswers1 = null;
-        ru.vsu.cs.zmaev.Question gameCurrentQuestion = null;
+        ru.vsu.cs.zmaev.ImageQuestion gameCurrentQuestion = null;
         java.lang.String gameAnswers2 = null;
         java.util.List<java.lang.String> gameAnswers = null;
         ru.vsu.cs.zmaev.GeographicalGameFragment game = mGame;

@@ -2606,10 +2606,10 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
-drawable about_android_trivia
 drawable android
 drawable android_category_simple
-drawable android_trivia
+drawable argentina_flag
+drawable austria
 drawable avd_hide_password
 drawable avd_show_password
 drawable bd_radio_button
@@ -2621,11 +2621,13 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable city
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable earth
 drawable giga_quiz_logo
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -2656,6 +2658,7 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable mountain
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
 drawable mtrl_checkbox_button_checked_unchecked
@@ -3453,6 +3456,8 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu navdrawer_menu
 menu options_menu
+mipmap argentina_flag
+mipmap earth
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
