@@ -4,6 +4,7 @@
     <color name="colorAccent">#7e53c5</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#1B434D</color>
+    <color name="colorSecondaryDark">#143038</color>
     <color name="gameOverBackground">#f8bbd0</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#06564E</color>
@@ -31,6 +32,7 @@
     <string name="description">description</string>
     <string name="game_over">Game Over</string>
     <string name="giga_quiz">GigaQuiz</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next_match">Выбрать тест</string>
     <string name="position">Position</string>
     <string name="rules">Правила</string>
@@ -38,9 +40,11 @@
         \n\tЕсли ты ответил неправильно, не расстраивайся! После завершения теста, ты всегда можешь вернуться к нему еще раз. В конце теста ты можете увидеть свой результат.</string>
     <string name="select_an_avatar">Select an Avatar</string>
     <string name="submit_button">Подтвердить</string>
+    <string name="themes_ft">Темы</string>
     <string name="title_about_trivia">GigaQuiz</string>
     <string name="title_giga_quiz_question">GigaQuiz (%1$d/%2$d)</string>
-    <string name="title_play">Play</string>
+    <string name="title_play_android_quiz">Android Quiz</string>
+    <string name="title_play_geographical_quiz">Географический Quiz</string>
     <string name="title_quiz_rules">GigaQuiz Rules</string>
     <string name="trivia_hint">Trivia Hint</string>
     <string name="try_again">Try Again?</string>

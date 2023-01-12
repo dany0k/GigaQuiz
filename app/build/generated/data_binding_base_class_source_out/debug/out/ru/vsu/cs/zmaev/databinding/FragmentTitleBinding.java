@@ -20,15 +20,20 @@ public abstract class FragmentTitleBinding extends ViewDataBinding {
   public final Button playButton;
 
   @NonNull
+  public final Button playGeographicalGame;
+
+  @NonNull
   public final ConstraintLayout titleConstraint;
 
   @NonNull
   public final ImageView titleImage;
 
   protected FragmentTitleBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button playButton, ConstraintLayout titleConstraint, ImageView titleImage) {
+      Button playButton, Button playGeographicalGame, ConstraintLayout titleConstraint,
+      ImageView titleImage) {
     super(_bindingComponent, _root, _localFieldCount);
     this.playButton = playButton;
+    this.playGeographicalGame = playGeographicalGame;
     this.titleConstraint = titleConstraint;
     this.titleImage = titleImage;
   }

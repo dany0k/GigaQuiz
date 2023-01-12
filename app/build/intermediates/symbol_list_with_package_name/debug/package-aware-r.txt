@@ -1328,6 +1328,7 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorSecondaryDark
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2611,6 +2612,7 @@ drawable android_category_simple
 drawable android_trivia
 drawable avd_hide_password
 drawable avd_show_password
+drawable bd_radio_button
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2624,6 +2626,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable giga_quiz_logo
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2776,12 +2779,9 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
-id action_gameFragment_to_gameOverFragment
 id action_gameFragment_to_gameResultFragment
-id action_gameFragment_to_gameWonFragment
-id action_gameOverFragment_to_gameFragment
 id action_gameResultFragment_to_titleFragment
-id action_gameWonFragment_to_gameFragment
+id action_geographicalGameFragment_to_gameResultFragment
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -2790,6 +2790,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_text
 id action_titleFragment_to_gameFragment
+id action_titleFragment_to_geographicalGameFragment
 id actions
 id activity_chooser_view_content
 id add
@@ -2927,10 +2928,9 @@ id frost
 id fullscreen_header
 id gameFragment
 id gameOverConstraintLayout
-id gameOverFragment
 id gameResultFragment
 id gameWonConstraintLayout
-id gameWonFragment
+id geographicalGameFragment
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3078,6 +3078,7 @@ id peekHeight
 id percent
 id pin
 id playButton
+id playGeographicalGame
 id position
 id postLayout
 id pressed
@@ -3388,6 +3389,7 @@ layout fragment_game
 layout fragment_game_over
 layout fragment_game_result
 layout fragment_game_won
+layout fragment_geographical_game
 layout fragment_rules
 layout fragment_title
 layout m3_alert_dialog
@@ -3452,6 +3454,7 @@ layout support_simple_spinner_dropdown_item
 menu navdrawer_menu
 menu options_menu
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation navigation
 plurals mtrl_badge_content_description
@@ -3506,6 +3509,7 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string game_over
 string giga_quiz
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -3611,9 +3615,11 @@ string search_menu_title
 string select_an_avatar
 string status_bar_notification_info_overflow
 string submit_button
+string themes_ft
 string title_about_trivia
 string title_giga_quiz_question
-string title_play
+string title_play_android_quiz
+string title_play_geographical_quiz
 string title_quiz_rules
 string trivia_hint
 string try_again

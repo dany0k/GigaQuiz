@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_geographicalGameFragment"
+            app:destination="@id/geographicalGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -20,46 +23,8 @@
         android:label="GameFragment"
         tools:layout="@layout/fragment_game" >
         <action
-            android:id="@+id/action_gameFragment_to_gameOverFragment"
-            app:destination="@id/gameOverFragment"
-            app:popUpTo="@+id/gameFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_gameFragment_to_gameWonFragment"
-            app:destination="@id/gameWonFragment"
-            app:popUpTo="@+id/gameFragment"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/action_gameFragment_to_gameResultFragment"
             app:destination="@id/gameResultFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/gameOverFragment"
-        android:name="ru.vsu.cs.zmaev.GameOverFragment"
-        android:label="fragment_game_over"
-        tools:layout="@layout/fragment_game_over" >
-        <action
-            android:id="@+id/action_gameOverFragment_to_gameFragment"
-            app:destination="@id/gameFragment"
-            app:popUpTo="@+id/titleFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
-    <fragment
-        android:id="@+id/gameWonFragment"
-        android:name="ru.vsu.cs.zmaev.GameWonFragment"
-        android:label="fragment_game_won"
-        tools:layout="@layout/fragment_game_won" >
-        <action
-            android:id="@+id/action_gameWonFragment_to_gameFragment"
-            app:destination="@id/gameFragment"
-            app:popUpTo="@+id/titleFragment"
-            app:popUpToInclusive="false" />
-        <argument
-            android:name="numQuestions"
-            app:argType="integer" />
-        <argument
-            android:name="numCorrect"
-            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -80,5 +45,13 @@
             app:destination="@id/titleFragment"
             app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/geographicalGameFragment"
+        android:name="ru.vsu.cs.zmaev.GeographicalGameFragment"
+        android:label="GeographicalGameFragment" >
+        <action
+            android:id="@+id/action_geographicalGameFragment_to_gameResultFragment"
+            app:destination="@id/gameResultFragment" />
     </fragment>
 </navigation>
