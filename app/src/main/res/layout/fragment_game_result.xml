@@ -14,7 +14,7 @@
         android:id="@+id/gameWonConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/resultGameColor">
+        android:background="@color/colorPrimaryDark">
 
         <Button
             android:id="@+id/nextMatchButton"
@@ -22,8 +22,9 @@
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/button_padding"
             android:paddingEnd="@dimen/button_padding"
-            android:text="Next Match"
-            android:textColor="@color/youWinDark"
+            android:text="@string/next_match"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorPrimary"
             android:textSize="@dimen/button_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +35,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.sendAnswers()}"/>
+            android:layout_marginBottom="9dp"
+            android:text="@string/your_result"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-16dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.sendAnswers()}"
+            android:layout_marginStart="@dimen/vertical_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage" />
 
         <ImageView
             android:id="@+id/youWinImage"
@@ -47,9 +69,11 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/you_win" />
+            app:srcCompat="@drawable/you_win"
+            android:contentDescription="@string/description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

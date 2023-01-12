@@ -29,6 +29,7 @@ public class TitleFragment extends Fragment {
         binding.playButton.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_gameFragment);
         });
+
         return binding.getRoot();
     }
 }

@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -29,15 +28,15 @@ public class GameFragment extends Fragment {
     }
 
     List<Question> questions = Arrays.asList(
-            new Question("What is Android Jetpack?",
+            new Question("Что такое Android Jetpack?",
                     new ArrayList<>(Arrays.asList(
-                            "All of these", "Tools", "Documentation", "Libraries")
+                            "Все из перечисленного", "Tools", "Documentation", "Libraries")
                     )),
-            new Question("What is the base class for layouts?",
+            new Question("Что является базовым классом для layout?",
                     new ArrayList<>(Arrays.asList(
                             "ViewGroup", "ViewSet", "ViewCollection", "ViewRoot")
                     )),
-            new Question("What do you use to push structured data into a layout?",
+            new Question("Что используется для добавления структурированных данных в layout?",
                     new ArrayList<>(Arrays.asList(
                             "Data binding", "Data pushing", "Set text", "An OnClick method")
                     ))
@@ -81,22 +80,16 @@ public class GameFragment extends Fragment {
                 } else {
                     incorrectAnswersCounter++;
                 }
-                if (questionIndex <= questionNum) {
+                if (questionIndex < questionNum) {
+                    questionIndex++;
                     currentQuestion = questions.get(questionIndex);
                     setQuestion();
                     binding.invalidateAll();
-                    questionIndex++;
                 } else {
                     sharedViewModel.setCorrectAnswers(correctAnswersCounter);
                     sharedViewModel.setIncorrectAnswers(incorrectAnswersCounter);
-                    System.out.printf("\n\n\nC:%s I:%s", correctAnswersCounter, incorrectAnswersCounter);
-                    if (correctAnswersCounter > incorrectAnswersCounter) {
-                        Navigation.findNavController(view)
-                                .navigate(R.id.action_gameFragment_to_gameWonFragment);
-                    } else {
-                        Navigation.findNavController(view)
-                                .navigate(R.id.action_gameFragment_to_gameResultFragment);
-                    }
+                    Navigation.findNavController(view)
+                            .navigate(R.id.action_gameFragment_to_gameResultFragment);
                 }
             }
         });

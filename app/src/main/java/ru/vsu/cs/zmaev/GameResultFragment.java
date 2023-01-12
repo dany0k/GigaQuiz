@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,9 @@ public class GameResultFragment extends Fragment {
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         correctAnswersCounter = sharedViewModel.getCorrectAnswers();
         incorrectAnswersCounter = sharedViewModel.getIncorrectAnswers();
-        System.out.printf("\n\n\nC:%s, I:%s", correctAnswersCounter, incorrectAnswersCounter);
+        binding.nextMatchButton.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_gameResultFragment_to_titleFragment);
+        });
         return binding.getRoot();
     }
 
