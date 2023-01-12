@@ -51,7 +51,7 @@ public class GameResultFragment extends Fragment {
 
     public String sendAnswers() {
         System.out.println("\n\n\n" + correctAnswersCounter + " " + incorrectAnswersCounter);
-        return "Correct answers: " + correctAnswersCounter + "\n" + "Incorrect answers: " + incorrectAnswersCounter;
+        return "Верные ответы: " + correctAnswersCounter + "\n" + "Неверные ответы: " + incorrectAnswersCounter;
     }
 
 }
