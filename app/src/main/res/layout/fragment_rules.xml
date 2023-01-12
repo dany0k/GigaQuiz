@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/trivia_rules"
+            app:srcCompat="@drawable/giga_quiz_logo"
             android:contentDescription="@string/description" />
 
         <TextView
