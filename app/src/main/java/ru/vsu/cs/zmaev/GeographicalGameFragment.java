@@ -1,7 +1,5 @@
 package ru.vsu.cs.zmaev;
 
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGeographicalGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
@@ -42,7 +39,7 @@ public class GeographicalGameFragment extends Fragment {
                     new ArrayList<>(Arrays.asList(
                             "Тирана", "София", "Загреб", "Братислава")
                     ),
-                    R.drawable.earth),
+                    R.drawable.city),
             new ImageQuestion("Какой стране принадлежит этот флаг?",
                     new ArrayList<>(Arrays.asList(
                             "Аргентина", "Бельгия", "Уругвай", "Либерия")
@@ -58,11 +55,11 @@ public class GeographicalGameFragment extends Fragment {
                             "Стамбул", "Лондон", "Москва", "Париж")
                     ),
                     R.drawable.city),
-            new ImageQuestion("Какой стране принадлежит этот флаг?",
+            new ImageQuestion("Столицей какого государства является Джакарта?",
                     new ArrayList<>(Arrays.asList(
-                            "Аргентина", "Бельгия", "Уругвай", "Либерия")
+                            "Индонезия", "Австралия", "Малайзия", "Сингапур")
                     ),
-                    R.drawable.argentina_flag),
+                    R.drawable.city),
             new ImageQuestion("Какой стране является третьей по площади в мире?",
                     new ArrayList<>(Arrays.asList(
                             "США", "Китай", "Канада", "Бразилия")
@@ -89,7 +86,6 @@ public class GeographicalGameFragment extends Fragment {
     public String correctAnswer;
     public List<String> answers;
     public int questionIndex = 0;
-    public float questionNum = Math.min((questions.size() + 1) / 2, 3);
 
     private int correctAnswersCounter = 0;
     private int incorrectAnswersCounter = 0;
