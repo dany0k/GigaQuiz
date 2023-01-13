@@ -1,9 +1,12 @@
 package ru.vsu.cs.zmaev;
 
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +24,8 @@ import ru.vsu.cs.zmaev.databinding.FragmentGeographicalGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
 
 public class GeographicalGameFragment extends Fragment {
+
+    private static final int DELAY = 500;
 
     FragmentGeographicalGameBinding binding = null;
 
@@ -89,7 +94,7 @@ public class GeographicalGameFragment extends Fragment {
 
     private int correctAnswersCounter = 0;
     private int incorrectAnswersCounter = 0;
-
+    private int answerIndex;
 
     @Nullable
     @Override
@@ -99,53 +104,70 @@ public class GeographicalGameFragment extends Fragment {
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         randomizeQuestions();
         binding.setGame(GeographicalGameFragment.this);
-        binding.submitButton.setOnClickListener(view -> {
-            int checkedId = binding.questionRadioGroup.getCheckedRadioButtonId();
-            if (-1 != checkedId) {
-                int answerIndex = 0;
-                switch (checkedId) {
-                    case (R.id.secondAnswerRadioButton):
-                        answerIndex = 1;
-                        break;
-                    case (R.id.thirdAnswerRadioButton):
-                        answerIndex = 2;
-                        break;
-                    case (R.id.fourthAnswerRadioButton):
-                        answerIndex = 3;
-                        break;
-                }
-                if (answers.get(answerIndex).equals(correctAnswer)) {
-                    correctAnswersCounter++;
-                } else {
-                    incorrectAnswersCounter++;
-                }
-                if (questionIndex < questions.size() - 1) {
-                    questionIndex++;
-                    currentQuestion = questions.get(questionIndex);
-                    setQuestion();
-                    binding.invalidateAll();
-                } else {
-                    sharedViewModel.setCorrectAnswers(correctAnswersCounter);
-                    sharedViewModel.setIncorrectAnswers(incorrectAnswersCounter);
-                    Navigation.findNavController(view)
-                            .navigate(R.id.action_geographicalGameFragment_to_gameResultFragment);
-                }
-            }
+        binding.buttonFirstAnswer.setOnClickListener(v -> {
+            answerIndex = 0;
+            precessButton(v, binding.buttonFirstAnswer);
+        });
+        binding.buttonSecondAnswer.setOnClickListener(v -> {
+            answerIndex = 1;
+            precessButton(v, binding.buttonSecondAnswer);
+        });
+        binding.buttonThirdAnswer.setOnClickListener(v -> {
+            answerIndex = 2;
+            precessButton(v, binding.buttonThirdAnswer);
+        });
+        binding.buttonFourthAnswer.setOnClickListener(v -> {
+            answerIndex = 3;
+            precessButton(v, binding.buttonFourthAnswer);
         });
         return binding.getRoot();
     }
 
+    private void precessButton(View view, Button button) {
+        // Checking is this the last question
+        if (questionIndex > questions.size() - 2) {
+            checkAnswer(button);
+            sharedViewModel.setCorrectAnswers(correctAnswersCounter);
+            sharedViewModel.setIncorrectAnswers(incorrectAnswersCounter);
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_geographicalGameFragment_to_gameResultFragment);
+        } else {
+            checkAnswer(button);
+            Handler handler = new Handler();
+            handler.postDelayed(() -> {
+                questionIndex++;
+                setQuestion();
+                binding.invalidateAll();
+            }, DELAY);
+        }
+    }
+
+    private void checkAnswer(Button button) {
+        if (answers.get(answerIndex).equals(correctAnswer)) {
+            button.setBackgroundColor(getResources().getColor(R.color.correctAnswer));
+            Handler handler = new Handler();
+            handler.postDelayed(() -> button.setBackgroundColor(getResources().getColor(R.color.colorSecondaryDark)), DELAY);
+            correctAnswersCounter++;
+        } else {
+            button.setBackgroundColor(getResources().getColor(R.color.incorrectAnswer));
+            Handler handler = new Handler();
+            handler.postDelayed(() -> button.setBackgroundColor(getResources().getColor(R.color.colorSecondaryDark)), DELAY);
+            incorrectAnswersCounter++;
+        }
+    }
+
     private void randomizeQuestions() {
         Collections.shuffle(questions);
-        questionIndex = 0;
         setQuestion();
     }
 
     private void setQuestion() {
-        currentQuestion = questions.get(questionIndex);
+        currentQuestion = new ImageQuestion(questions.get(questionIndex).getText(), questions.get(questionIndex).getAnswers(),
+                questions.get(questionIndex).getDrawable_id());
         binding.questionImage.setImageResource(currentQuestion.getDrawable_id());
         correctAnswer = currentQuestion.getAnswers().get(0);
         answers = questions.get(questionIndex).getAnswers();
+        System.out.println(currentQuestion.getText());
         Collections.shuffle(answers);
     }
 }
