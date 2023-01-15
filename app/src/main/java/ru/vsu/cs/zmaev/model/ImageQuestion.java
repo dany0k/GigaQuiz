@@ -1,4 +1,4 @@
-package ru.vsu.cs.zmaev;
+package ru.vsu.cs.zmaev.model;
 
 import java.util.List;
 

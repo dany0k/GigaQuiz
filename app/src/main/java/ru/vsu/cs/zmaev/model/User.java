@@ -1,4 +1,4 @@
-package ru.vsu.cs.zmaev;
+package ru.vsu.cs.zmaev.model;
 
 public class User {
 
