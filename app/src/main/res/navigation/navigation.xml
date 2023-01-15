@@ -54,4 +54,22 @@
             android:id="@+id/action_geographicalGameFragment_to_gameResultFragment"
             app:destination="@id/gameResultFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="ru.vsu.cs.zmaev.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_userEditProfileFragment"
+            app:destination="@id/userEditProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userEditProfileFragment"
+        android:name="ru.vsu.cs.zmaev.UserEditProfileFragment"
+        android:label="fragment_user_edit_profile"
+        tools:layout="@layout/fragment_user_edit_profile" >
+        <action
+            android:id="@+id/action_userEditProfileFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
 </navigation>

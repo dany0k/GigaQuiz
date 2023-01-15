@@ -15,14 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,6 +25,7 @@ import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
+import ru.vsu.cs.zmaev.model.ImageQuestion;
 import ru.vsu.cs.zmaev.model.ThemeIDSender;
 
 public class GameFragment extends Fragment {
@@ -147,7 +143,6 @@ public class GameFragment extends Fragment {
         String str;
         List<ImageQuestion> questionsBank = new ArrayList<>();
         try {
-            System.out.println(R.drawable.android_category_simple);
             InputStream inputStream = getContext().getAssets().open(fileName);
             int size = inputStream.available();
             byte[] buffer = new byte[size];

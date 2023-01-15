@@ -9,6 +9,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+
 import kotlin.Suppress;
 import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
 
@@ -21,11 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         @Suppress(names = "UNUSED_VARIABLE")
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        drawerLayout = binding.drawerLayout;
 
         NavController navController = Navigation.findNavController(this, R.id.myNavHostFragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(binding.bottomNavView, navController);
+
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
@@ -35,4 +35,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.myNavHostFragment);
         return NavigationUI.navigateUp(navController, drawerLayout);
     }
+
 }
