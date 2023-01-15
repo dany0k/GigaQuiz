@@ -156,16 +156,18 @@ public class GameFragment extends Fragment {
             String[] splitRow = str.split("\n");
             String questionName;
             String questionAnswers;
-            int questionImage;
+            String questionImageName;
             for (int i = 0; i < splitRow.length; i++) {
                 String[] splitQuestions = splitRow[i].split("\n");
                 for (int j = 0; j < splitQuestions.length; j++) {
                     String[] splitQuestion = splitQuestions[j].split(":");
                     questionName = splitQuestion[0];
                     questionAnswers = splitQuestion[1];
-                    questionImage = Integer.parseInt(splitQuestion[2].trim());
+                    questionImageName = splitQuestion[2].trim();
+                    int imageID = getResources().getIdentifier(questionImageName, "drawable", getContext().getPackageName());
+                    System.out.println(imageID);
                     String[] answers = questionAnswers.split(";");
-                    ImageQuestion question = new ImageQuestion(questionName, Arrays.asList(answers), questionImage);
+                    ImageQuestion question = new ImageQuestion(questionName, Arrays.asList(answers), imageID);
                     questionsBank.add(question);
                 }
             }

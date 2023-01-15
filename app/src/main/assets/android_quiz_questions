@@ -1,10 +1,10 @@
-Что такое Android Jetpack?:Все из перечисленного;Tools;Documentation;Libraries:2131165299
-Что является базовым классом для layout?:ViewGroup;ViewSet;ViewCollection;ViewRoot:2131165299
-Что используется для добавления структурированных данных в layout?:Data binding;Data pushing;Set text;метод OnClick:2131165299
-Какой layout используется для сложных экранов?:ConstraintLayout;GridLayout;LinearLayout;FrameLayout:2131165299
-Как называется система сборки для Android?:Gradle;Graddle;Grodle;Graudle:2131165299
-Какой класс используется для создания векторного рисунка?:VectorDrawable;AndroidVectorDrawable;DrawableVector;AndroidVector:2131165299
-Что из перечисленного является компонентом навигации Android?:NavController;NavCentral;NavMaster;NavSwitcher:2131165299
-Какой элемент XML позволяет зарегистрировать действие в средстве запуска?:intent-filter;app-registry;launcher-registry;app-launcher:2131165299
-Какой тэг используется для соединения UI приложения и бизнес-логики?:<layout>;<binding>;<data-binding>;<dbinding>:2131165299
-Какой метод находит объект по id?:FindViewID;findViewId;findViewById;findById:2131165299
+Что такое Android Jetpack?:Все из перечисленного;Tools;Documentation;Libraries:android_category_simple
+Что является базовым классом для layout?:ViewGroup;ViewSet;ViewCollection;ViewRoot:android_category_simple
+Что используется для добавления структурированных данных в layout?:Data binding;Data pushing;Set text;метод OnClick:android_category_simple
+Какой layout используется для сложных экранов?:ConstraintLayout;GridLayout;LinearLayout;FrameLayout:android_category_simple
+Как называется система сборки для Android?:Gradle;Graddle;Grodle;Graudle:android_category_simple
+Какой класс используется для создания векторного рисунка?:VectorDrawable;AndroidVectorDrawable;DrawableVector;AndroidVector:android_category_simple
+Что из перечисленного является компонентом навигации Android?:NavController;NavCentral;NavMaster;NavSwitcher:android_category_simple
+Какой элемент XML позволяет зарегистрировать действие в средстве запуска?:intent-filter;app-registry;launcher-registry;app-launcher:android_category_simple
+Какой тэг используется для соединения UI приложения и бизнес-логики?:<layout>;<binding>;<data-binding>;<dbinding>:android_category_simple
+Какой метод находит объект по id?:FindViewID;findViewId;findViewById;findById:android_category_simple
