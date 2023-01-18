@@ -11,7 +11,7 @@
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/background_profile"
             android:layout_width="match_parent"
             android:layout_height="200sp"
             android:background="@color/colorPrimaryDark"
@@ -23,7 +23,7 @@
         </ImageView>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/profile_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/description"
@@ -31,7 +31,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/background_profile"
             app:layout_constraintVertical_bias="0.211"
             tools:ignore="MissingConstraints"
             tools:src="@drawable/avatar_male" />
@@ -44,7 +44,7 @@
             android:layout_marginEnd="20sp"
             android:layout_marginTop="20sp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,6 +52,7 @@
                 android:text="@string/your_name" />
 
             <EditText
+                android:id="@+id/edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/your_name" />
@@ -59,7 +60,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/country_ll"
+            android:id="@+id/country_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
@@ -91,7 +92,7 @@
             android:layout_marginEnd="20sp"
             android:layout_marginTop="20sp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/country_ll">
+            app:layout_constraintTop_toBottomOf="@+id/country_spinner">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -105,6 +106,7 @@
                     android:text="@string/age" />
 
                 <Spinner
+                    android:id="@+id/age_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/age"/>
@@ -123,6 +125,7 @@
                     android:text="@string/sex" />
 
                 <Spinner
+                    android:id="@+id/sex_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:spinnerMode="dropdown"
@@ -133,6 +136,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/submit_button"
             android:layout_width="200sp"
             android:layout_height="50sp"
             android:text="@string/submit_button"
