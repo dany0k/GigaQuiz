@@ -23,16 +23,22 @@ import ru.vsu.cs.zmaev.model.MyDrawerController;
 
 public class MainActivity extends AppCompatActivity implements MyDrawerController {
 
+    ActivityMainBinding binding;
+
     DrawerLayout drawerLayout;
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        @Suppress(names = "UNUSED_VARIABLE")
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        NavController navController = Navigation.findNavController(this, R.id.myNavHostFragment);
-        NavigationUI.setupWithNavController(binding.bottomNavView, navController);
-        bottomNavigationView = findViewById(R.id.bottom_nav_view);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        // Bottom Navigation
+        NavController bottomNavController = Navigation.findNavController(this, R.id.myNavHostFragment);
+        NavigationUI.setupWithNavController(binding.bottomNavView, bottomNavController);
+        bottomNavigationView = binding.bottomNavView;
+        // In game navigation
+        NavController upperNavController = Navigation.findNavController(this, R.id.myNavHostFragment);
+        NavigationUI.setupActionBarWithNavController(this, upperNavController, drawerLayout);
+        NavigationUI.setupWithNavController(binding.upperNavView, upperNavController);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
