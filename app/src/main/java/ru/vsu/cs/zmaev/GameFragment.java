@@ -4,6 +4,7 @@ package ru.vsu.cs.zmaev;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,10 +23,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
+import ru.vsu.cs.zmaev.model.MyDrawerController;
 import ru.vsu.cs.zmaev.model.ThemeIDSender;
 
 public class GameFragment extends Fragment {
@@ -82,6 +85,7 @@ public class GameFragment extends Fragment {
             answerIndex = 3;
             precessButton(v, binding.buttonFourthAnswer);
         });
+
         return binding.getRoot();
     }
 
@@ -89,7 +93,14 @@ public class GameFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.setLifecycleOwner(getViewLifecycleOwner());
+        ((MainActivity) getActivity()).setDrawerUnlocked();
         binding.setGame(this);
+    }
+
+    @Override
+    public void onDestroyView() {
+        ((MainActivity) getActivity()).setDrawerLocked();
+        super.onDestroyView();
     }
 
     private void precessButton(View view, Button button) {
@@ -179,5 +190,11 @@ public class GameFragment extends Fragment {
             return parseQuestionsFromTxt("android_quiz_questions");
         }
         return null;
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        System.out.println("Нахуй ты это сделал?");
+        return super.onContextItemSelected(item);
     }
 }
