@@ -16,8 +16,6 @@ public class FragmentGameBindingImpl extends FragmentGameBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.frameLayout, 6);
         sViewsWithIds.put(R.id.questionImage, 7);
-        sViewsWithIds.put(R.id.questionRadioGroup, 8);
-        sViewsWithIds.put(R.id.submitButton, 9);
     }
     // views
     @NonNull
@@ -28,27 +26,25 @@ public class FragmentGameBindingImpl extends FragmentGameBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentGameBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FragmentGameBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.RadioButton) bindings[2]
-            , (android.widget.RadioButton) bindings[5]
+            , (android.widget.Button) bindings[2]
+            , (android.widget.Button) bindings[4]
+            , (android.widget.Button) bindings[3]
+            , (android.widget.Button) bindings[5]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
             , (android.widget.ImageView) bindings[7]
-            , (android.widget.RadioGroup) bindings[8]
             , (android.widget.TextView) bindings[1]
-            , (android.widget.RadioButton) bindings[3]
-            , (android.widget.Button) bindings[9]
-            , (android.widget.RadioButton) bindings[4]
             );
-        this.firstAnswerRadioButton.setTag(null);
-        this.fourthAnswerRadioButton.setTag(null);
+        this.buttonFirstAnswer.setTag(null);
+        this.buttonFourthAnswer.setTag(null);
+        this.buttonSecondAnswer.setTag(null);
+        this.buttonThirdAnswer.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.questionText.setTag(null);
-        this.secondAnswerRadioButton.setTag(null);
-        this.thirdAnswerRadioButton.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -111,7 +107,7 @@ public class FragmentGameBindingImpl extends FragmentGameBinding  {
         java.lang.String gameAnswers3 = null;
         java.lang.String gameAnswers0 = null;
         java.lang.String gameAnswers1 = null;
-        ru.vsu.cs.zmaev.Question gameCurrentQuestion = null;
+        ru.vsu.cs.zmaev.model.ImageQuestion gameCurrentQuestion = null;
         java.lang.String gameAnswers2 = null;
         java.util.List<java.lang.String> gameAnswers = null;
         ru.vsu.cs.zmaev.GameFragment game = mGame;
@@ -147,11 +143,11 @@ public class FragmentGameBindingImpl extends FragmentGameBinding  {
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.firstAnswerRadioButton, gameAnswers0);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.fourthAnswerRadioButton, gameAnswers3);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonFirstAnswer, gameAnswers0);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonFourthAnswer, gameAnswers3);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonSecondAnswer, gameAnswers1);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonThirdAnswer, gameAnswers2);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.questionText, gameCurrentQuestionGetText);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.secondAnswerRadioButton, gameAnswers1);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.thirdAnswerRadioButton, gameAnswers2);
         }
     }
     // Listener Stub Implementations

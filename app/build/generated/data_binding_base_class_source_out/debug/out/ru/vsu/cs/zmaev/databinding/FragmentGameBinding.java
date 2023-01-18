@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,10 +20,16 @@ import ru.vsu.cs.zmaev.R;
 
 public abstract class FragmentGameBinding extends ViewDataBinding {
   @NonNull
-  public final RadioButton firstAnswerRadioButton;
+  public final Button buttonFirstAnswer;
 
   @NonNull
-  public final RadioButton fourthAnswerRadioButton;
+  public final Button buttonFourthAnswer;
+
+  @NonNull
+  public final Button buttonSecondAnswer;
+
+  @NonNull
+  public final Button buttonThirdAnswer;
 
   @NonNull
   public final ConstraintLayout frameLayout;
@@ -34,38 +38,23 @@ public abstract class FragmentGameBinding extends ViewDataBinding {
   public final ImageView questionImage;
 
   @NonNull
-  public final RadioGroup questionRadioGroup;
-
-  @NonNull
   public final TextView questionText;
-
-  @NonNull
-  public final RadioButton secondAnswerRadioButton;
-
-  @NonNull
-  public final Button submitButton;
-
-  @NonNull
-  public final RadioButton thirdAnswerRadioButton;
 
   @Bindable
   protected GameFragment mGame;
 
   protected FragmentGameBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RadioButton firstAnswerRadioButton, RadioButton fourthAnswerRadioButton,
-      ConstraintLayout frameLayout, ImageView questionImage, RadioGroup questionRadioGroup,
-      TextView questionText, RadioButton secondAnswerRadioButton, Button submitButton,
-      RadioButton thirdAnswerRadioButton) {
+      Button buttonFirstAnswer, Button buttonFourthAnswer, Button buttonSecondAnswer,
+      Button buttonThirdAnswer, ConstraintLayout frameLayout, ImageView questionImage,
+      TextView questionText) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.firstAnswerRadioButton = firstAnswerRadioButton;
-    this.fourthAnswerRadioButton = fourthAnswerRadioButton;
+    this.buttonFirstAnswer = buttonFirstAnswer;
+    this.buttonFourthAnswer = buttonFourthAnswer;
+    this.buttonSecondAnswer = buttonSecondAnswer;
+    this.buttonThirdAnswer = buttonThirdAnswer;
     this.frameLayout = frameLayout;
     this.questionImage = questionImage;
-    this.questionRadioGroup = questionRadioGroup;
     this.questionText = questionText;
-    this.secondAnswerRadioButton = secondAnswerRadioButton;
-    this.submitButton = submitButton;
-    this.thirdAnswerRadioButton = thirdAnswerRadioButton;
   }
 
   public abstract void setGame(@Nullable GameFragment game);

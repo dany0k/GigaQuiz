@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="age">
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="countriesNames">
+        <item>Азербайджан</item>
+        <item>Армения</item>
+        <item>Беларусь</item>
+        <item>Казахстан</item>
+        <item>Кыргызстан</item>
+        <item>Молдова</item>
+        <item>Россия</item>
+        <item>Таджикистан</item>
+        <item>Туркменистан</item>
+        <item>Узбекистан</item>
+        <item>Украина</item>
+
+        <item>Грузия</item>
+    </string-array>
+    <string-array name="sex">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#7e53c5</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#1B434D</color>
-    <color name="colorSecondaryDark">#143038</color>
+    <color name="colorSecondaryDark">#275D6A</color>
+    <color name="correctAnswer">#98CF93</color>
     <color name="gameOverBackground">#f8bbd0</color>
+    <color name="incorrectAnswer">#DB7474</color>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#06564E</color>
-    <color name="purple_700">#06564E</color>
+    <color name="purple_500">#1B434D</color>
+    <color name="purple_700">#1B434D</color>
     <color name="resultGameColor">#CEE257</color>
     <color name="teal_200">#FFFFFFFF</color>
     <color name="teal_700">#FFFFFFFF</color>
@@ -27,18 +94,27 @@
     <dimen name="vertical_margin">16dp</dimen>
     <string name="about">О приложении</string>
     <string name="about_text">С помощью GigaQuiz ты можешь проверить свой уровень знаний из различных свер. Надеюсь тебе понравиться данная викторина.</string>
+    <string name="age">Возраст</string>
+    <string name="android_result">Андроид:</string>
     <string name="app_name">GigaQuiz</string>
+    <string name="categories_result">Результат по категориям</string>
     <string name="congratulations">Поздравляю!</string>
+    <string name="country">Страна</string>
     <string name="description">description</string>
     <string name="game_over">Game Over</string>
+    <string name="geographical_result">География:</string>
     <string name="giga_quiz">GigaQuiz</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_age_tiet">54</string>
+    <string name="hint_country_til">Россия</string>
+    <string name="hint_name_til">Даниил</string>
     <string name="next_match">Выбрать тест</string>
     <string name="position">Position</string>
     <string name="rules">Правила</string>
     <string name="rules_text">\tВыбери ответ из предложенных вариантов.\n
         \n\tЕсли ты ответил неправильно, не расстраивайся! После завершения теста, ты всегда можешь вернуться к нему еще раз. В конце теста ты можете увидеть свой результат.</string>
     <string name="select_an_avatar">Select an Avatar</string>
+    <string name="sex">Пол</string>
     <string name="submit_button">Подтвердить</string>
     <string name="themes_ft">Темы</string>
     <string name="title_about_trivia">GigaQuiz</string>
@@ -48,6 +124,7 @@
     <string name="title_quiz_rules">GigaQuiz Rules</string>
     <string name="trivia_hint">Trivia Hint</string>
     <string name="try_again">Try Again?</string>
+    <string name="your_name">Ваше имя</string>
     <string name="your_result">Твой результат!</string>
     <style name="Theme.GigaQuiz" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         

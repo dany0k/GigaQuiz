@@ -6,9 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.drawerlayout.widget.DrawerLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -16,16 +17,21 @@ import ru.vsu.cs.zmaev.R;
 
 public abstract class ActivityMainBinding extends ViewDataBinding {
   @NonNull
-  public final DrawerLayout drawerLayout;
+  public final BottomNavigationView bottomNavView;
 
   @NonNull
-  public final NavigationView navView;
+  public final ConstraintLayout drawerLayout;
+
+  @NonNull
+  public final NavigationView upperNavView;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      DrawerLayout drawerLayout, NavigationView navView) {
+      BottomNavigationView bottomNavView, ConstraintLayout drawerLayout,
+      NavigationView upperNavView) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.bottomNavView = bottomNavView;
     this.drawerLayout = drawerLayout;
-    this.navView = navView;
+    this.upperNavView = upperNavView;
   }
 
   @NonNull

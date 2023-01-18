@@ -21,7 +21,7 @@ public class ImageQuestion {
         return answers;
     }
 
-    public int getDrawable_id() {
+    public int getDrawableID() {
         return drawable_id;
     }
 }

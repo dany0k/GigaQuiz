@@ -5,5 +5,7 @@ public class BR {
 
   public static final int game = 1;
 
-  public static final int viewModel = 2;
+  public static final int user = 2;
+
+  public static final int viewModel = 3;
 }

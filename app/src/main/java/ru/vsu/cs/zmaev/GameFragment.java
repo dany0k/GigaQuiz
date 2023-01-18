@@ -4,7 +4,6 @@ package ru.vsu.cs.zmaev;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -23,12 +22,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
-import ru.vsu.cs.zmaev.model.MyDrawerController;
 import ru.vsu.cs.zmaev.model.ThemeIDSender;
 
 public class GameFragment extends Fragment {
@@ -143,8 +140,8 @@ public class GameFragment extends Fragment {
 
     private void setQuestion() {
         currentQuestion = new ImageQuestion(questions.get(questionIndex).getText(), questions.get(questionIndex).getAnswers(),
-                questions.get(questionIndex).getDrawable_id());
-        binding.questionImage.setImageResource(currentQuestion.getDrawable_id());
+                questions.get(questionIndex).getDrawableID());
+        binding.questionImage.setImageResource(currentQuestion.getDrawableID());
         correctAnswer = currentQuestion.getAnswers().get(0);
         answers = questions.get(questionIndex).getAnswers();
         Collections.shuffle(answers);
@@ -190,11 +187,5 @@ public class GameFragment extends Fragment {
             return parseQuestionsFromTxt("android_quiz_questions");
         }
         return null;
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        System.out.println("Нахуй ты это сделал?");
-        return super.onContextItemSelected(item);
     }
 }

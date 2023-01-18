@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "Z:\\VSU\\3course\\Mobile\\GigaQuiz\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "Z:\\VSU\\3course\\GigaQuiz\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ru.vsu.cs.zmaev.UserProfileFragment">
 
+    <data>
+        <variable
+            name="user"
+            type="ru.vsu.cs.zmaev.UserProfileFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_user_profile"
         android:layout_width="match_parent"
@@ -26,13 +32,14 @@
             android:id="@+id/edit_profile_button"
             android:layout_width="39dp"
             android:layout_height="38dp"
+            android:layout_marginStart="5sp"
             android:background="@drawable/edit_profile"
+            android:contentDescription="@string/description"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profile_username"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.206"
-            android:contentDescription="@string/description" />
+            app:layout_constraintVertical_bias="0.206" />
 
         <ImageView
             android:id="@+id/profile_image"
@@ -49,21 +56,38 @@
             tools:ignore="MissingConstraints"
             tools:src="@drawable/avatar_male" />
 
-        <TextView
-            android:id="@+id/profile_username"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text=""
-            android:textColor="@color/white"
-            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.034"
             app:layout_constraintStart_toEndOf="@+id/profile_image"
             app:layout_constraintTop_toTopOf="@+id/background_profile"
             app:layout_constraintVertical_bias="0.207"
-            tools:text="Даниил" />
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                tools:text="Даниил" />
+
+            <ImageView
+                android:id="@+id/countryIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10sp"
+                android:contentDescription="@string/description"
+                android:src="@{user.countryIcon}"
+                tools:ignore="SmallSp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,18 +108,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
             <TextView
+                android:id="@+id/android_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
-                android:text="Андроид"
+                android:text="@{user.androidResult}"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/geographical_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
-                android:text="География"
+                android:text="@{user.geographicalResult}"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
 

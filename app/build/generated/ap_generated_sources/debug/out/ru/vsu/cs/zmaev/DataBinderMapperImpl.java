@@ -20,8 +20,9 @@ import ru.vsu.cs.zmaev.databinding.FragmentGameBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentGameOverBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentGameResultBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentGameWonBindingImpl;
-import ru.vsu.cs.zmaev.databinding.FragmentGeographicalGameBindingImpl;
 import ru.vsu.cs.zmaev.databinding.FragmentTitleBindingImpl;
+import ru.vsu.cs.zmaev.databinding.FragmentUserEditProfileBindingImpl;
+import ru.vsu.cs.zmaev.databinding.FragmentUserProfileBindingImpl;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYMAIN = 1;
@@ -34,11 +35,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTGAMEWON = 5;
 
-  private static final int LAYOUT_FRAGMENTGEOGRAPHICALGAME = 6;
+  private static final int LAYOUT_FRAGMENTTITLE = 6;
 
-  private static final int LAYOUT_FRAGMENTTITLE = 7;
+  private static final int LAYOUT_FRAGMENTUSEREDITPROFILE = 7;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
+  private static final int LAYOUT_FRAGMENTUSERPROFILE = 8;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
@@ -46,8 +49,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game_over, LAYOUT_FRAGMENTGAMEOVER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game_result, LAYOUT_FRAGMENTGAMERESULT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_game_won, LAYOUT_FRAGMENTGAMEWON);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_geographical_game, LAYOUT_FRAGMENTGEOGRAPHICALGAME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_title, LAYOUT_FRAGMENTTITLE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_user_edit_profile, LAYOUT_FRAGMENTUSEREDITPROFILE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(ru.vsu.cs.zmaev.R.layout.fragment_user_profile, LAYOUT_FRAGMENTUSERPROFILE);
   }
 
   @Override
@@ -89,17 +93,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for fragment_game_won is invalid. Received: " + tag);
         }
-        case  LAYOUT_FRAGMENTGEOGRAPHICALGAME: {
-          if ("layout/fragment_geographical_game_0".equals(tag)) {
-            return new FragmentGeographicalGameBindingImpl(component, view);
-          }
-          throw new IllegalArgumentException("The tag for fragment_geographical_game is invalid. Received: " + tag);
-        }
         case  LAYOUT_FRAGMENTTITLE: {
           if ("layout/fragment_title_0".equals(tag)) {
             return new FragmentTitleBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_title is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTUSEREDITPROFILE: {
+          if ("layout/fragment_user_edit_profile_0".equals(tag)) {
+            return new FragmentUserEditProfileBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_user_edit_profile is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTUSERPROFILE: {
+          if ("layout/fragment_user_profile_0".equals(tag)) {
+            return new FragmentUserProfileBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_user_profile is invalid. Received: " + tag);
         }
       }
     }
@@ -146,17 +156,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(3);
+    static final SparseArray<String> sKeys = new SparseArray<String>(4);
 
     static {
       sKeys.put(0, "_all");
       sKeys.put(1, "game");
-      sKeys.put(2, "viewModel");
+      sKeys.put(2, "user");
+      sKeys.put(3, "viewModel");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
 
     static {
       sKeys.put("layout/activity_main_0", ru.vsu.cs.zmaev.R.layout.activity_main);
@@ -164,8 +175,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_game_over_0", ru.vsu.cs.zmaev.R.layout.fragment_game_over);
       sKeys.put("layout/fragment_game_result_0", ru.vsu.cs.zmaev.R.layout.fragment_game_result);
       sKeys.put("layout/fragment_game_won_0", ru.vsu.cs.zmaev.R.layout.fragment_game_won);
-      sKeys.put("layout/fragment_geographical_game_0", ru.vsu.cs.zmaev.R.layout.fragment_geographical_game);
       sKeys.put("layout/fragment_title_0", ru.vsu.cs.zmaev.R.layout.fragment_title);
+      sKeys.put("layout/fragment_user_edit_profile_0", ru.vsu.cs.zmaev.R.layout.fragment_user_edit_profile);
+      sKeys.put("layout/fragment_user_profile_0", ru.vsu.cs.zmaev.R.layout.fragment_user_profile);
     }
   }
 }

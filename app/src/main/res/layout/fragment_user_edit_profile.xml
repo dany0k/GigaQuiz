@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ru.vsu.cs.zmaev.UserEditProfileFragment">
 
+    <data>
+        <variable
+            name="user"
+            type="ru.vsu.cs.zmaev.UserEditProfileFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_user_profile"
         android:layout_width="match_parent"
@@ -55,12 +61,13 @@
                 android:id="@+id/edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{user.username}"
                 android:hint="@string/your_name" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/country_spinner"
+            android:id="@+id/countryLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
@@ -77,8 +84,10 @@
                 android:text="@string/country" />
 
             <Spinner
+                android:id="@+id/countrySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:selection="@{user.country}"
                 android:spinnerMode="dropdown"
                 android:entries="@array/countriesNames"/>
 
@@ -92,7 +101,7 @@
             android:layout_marginEnd="20sp"
             android:layout_marginTop="20sp"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/country_spinner">
+            app:layout_constraintTop_toBottomOf="@+id/countryLinearLayout">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -106,7 +115,7 @@
                     android:text="@string/age" />
 
                 <Spinner
-                    android:id="@+id/age_spinner"
+                    android:id="@+id/ageSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/age"/>
