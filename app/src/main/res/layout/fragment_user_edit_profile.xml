@@ -61,8 +61,10 @@
                 android:id="@+id/edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{user.username}"
-                android:hint="@string/your_name" />
+                android:text=""
+                android:hint="@string/your_name"
+                android:autofillHints=""
+                android:inputType="textPersonName" />
 
         </LinearLayout>
 
@@ -87,7 +89,6 @@
                 android:id="@+id/countrySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:selection="@{user.country}"
                 android:spinnerMode="dropdown"
                 android:entries="@array/countriesNames"/>
 
@@ -118,6 +119,7 @@
                     android:id="@+id/ageSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
                     android:entries="@array/age"/>
 
             </LinearLayout>

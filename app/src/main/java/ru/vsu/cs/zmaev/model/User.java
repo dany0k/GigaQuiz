@@ -3,7 +3,6 @@ package ru.vsu.cs.zmaev.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Objects;
 
 public class User {
 

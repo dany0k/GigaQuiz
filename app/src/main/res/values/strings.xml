@@ -7,7 +7,7 @@
     <string name="giga_quiz">GigaQuiz</string>
     <string name="about_text">С помощью GigaQuiz ты можешь проверить свой уровень знаний из различных свер. Надеюсь тебе понравиться данная викторина.</string>
     <string name="rules_text">\tВыбери ответ из предложенных вариантов.\n
-        \n\tЕсли ты ответил неправильно, не расстраивайся! После завершения теста, ты всегда можешь вернуться к нему еще раз. В конце теста ты можете увидеть свой результат.</string>
+        \n\tЕсли ты ответил неправильно, не расстраивайся! После завершения теста, ты всегда можешь вернуться к нему еще раз. В конце теста ты можешь увидеть свой результат.</string>
     <string name="rules">Правила</string>
     <string name="about">О приложении</string>
     <string name="trivia_hint">Trivia Hint</string>
@@ -17,11 +17,10 @@
     <string name="submit_button">Подтвердить</string>
     <string name="congratulations">Поздравляю!</string>
     <string name="description">description</string>
-    <string name="title_play_android_quiz">Android Quiz</string>
-    <string name="title_play_geographical_quiz">Географический Quiz</string>
+    <string name="title_play_android_quiz">Андроид</string>
+    <string name="title_play_geographical_quiz">География</string>
     <string name="your_result">Твой результат!</string>
     <string name="next_match">Выбрать тест</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="themes_ft">Темы</string>
     <string name="hint_name_til">Даниил</string>
@@ -35,6 +34,13 @@
     <string name="android_result">Андроид:</string>
     <string name="geographical_result">География:</string>
     <string name="registration_button_text">Регистрация</string>
+    <string name="menu_navigation">Меню</string>
+    <string name="profile_navigation">Профиль</string>
+    <string name="home_page_navigation">На главную</string>
+    <string name="rules_navigation">Правила</string>
+    <string name="choose_theme_text">Темы</string>
+    <string name="title_play_auto_brand_quiz">Марки авто</string>
+    <string name="title_play_science_quiz">Наука</string>
 
     <string-array name="countriesNames">
         <item>Азербайджан</item>
@@ -97,6 +103,56 @@
         <item>48</item>
         <item>49</item>
         <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
+        <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
     </string-array>
 
     <string-array name="sex">

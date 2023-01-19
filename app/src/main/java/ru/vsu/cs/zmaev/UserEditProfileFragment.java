@@ -62,13 +62,7 @@ public class UserEditProfileFragment extends Fragment {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        // TODO: 18.01.2023
-        username = user.getName();
-        country = Arrays.asList(getResources().getStringArray(R.array.countriesNames)).indexOf(user.getCountry());
-        binding.editName.setText("den");
-        binding.countrySpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.countriesNames)).indexOf(user.getCountry()));
-        age = user.getAge();
-//        sex = user.getSex();
+        loadUserInf(user);
         binding.submitButton.setOnClickListener(v -> {
             User newUser = new User();
             try {
@@ -83,6 +77,13 @@ public class UserEditProfileFragment extends Fragment {
         });
 
         return binding.getRoot();
+    }
+
+    private void loadUserInf(User user) {
+        binding.editName.setText(user.getName());
+        binding.countrySpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.countriesNames)).indexOf(user.getCountry()));
+        binding.ageSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.age)).indexOf(Integer.toString(user.getAge())));
+        binding.sexSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.sex)).indexOf(user.getSex()));
     }
 
 
