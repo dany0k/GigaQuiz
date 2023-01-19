@@ -36,27 +36,45 @@ public class TitleFragment extends Fragment {
          binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_title, container, false);
          if (JsonAdapter.isFilePresent(getContext(), "user.json")) {
-             binding.playButton.setVisibility(View.VISIBLE);
-             binding.playGeographicalGame.setVisibility(View.VISIBLE);
+             showPlayButtons();
              binding.registrationButton.setVisibility(View.GONE);
-             binding.playButton.setOnClickListener(view -> {
-                 themeID = 0;
-                 themeIDSender.setThemeID(themeID);
-                 Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_gameFragment);
+             binding.playAndroidQuiz.setOnClickListener(v -> {
+                 redirectToGameFragment(v, 0);
              });
-             binding.playGeographicalGame.setOnClickListener(v -> {
+             binding.playGeographicalQuiz.setOnClickListener(v -> {
                  themeID = 1;
                  themeIDSender.setThemeID(themeID);
                  Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
              });
+             binding.playAutoBrandQuiz.setOnClickListener(v -> {
+                 redirectToGameFragment(v, 2);
+             });
+             binding.playScienceQuiz.setOnClickListener(v -> {
+                 redirectToGameFragment(v, 3);
+             });
          } else {
-             binding.playButton.setVisibility(View.GONE);
-             binding.playGeographicalGame.setVisibility(View.GONE);
+             binding.registrationButton.setVisibility(View.VISIBLE);
+             hidePlayButtons();
              binding.registrationButton.setOnClickListener(view -> {
                 Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
              });
          }
 
         return binding.getRoot();
+    }
+
+    private void showPlayButtons() {
+        binding.themeTextView.setVisibility(View.VISIBLE);
+        binding.allThemesLinearLayout.setVisibility(View.VISIBLE);
+    }
+
+    private void hidePlayButtons() {
+        binding.themeTextView.setVisibility(View.GONE);
+        binding.allThemesLinearLayout.setVisibility(View.GONE);
+    }
+
+    private void redirectToGameFragment(View v, int themeID) {
+        themeIDSender.setThemeID(themeID);
+        Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
     }
 }

@@ -25,58 +25,104 @@
             app:layout_constraintVertical_bias="0.171"
             app:srcCompat="@drawable/giga_quiz_logo" />
 
+        <TextView
+            android:id="@+id/themeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="@string/choose_theme_text"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintTop_toBottomOf="@+id/titleImage"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:id="@+id/allThemesLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/themeTextView"
+            tools:layout_editor_absoluteX="1dp">
+
+            <LinearLayout
+                android:id="@+id/themeLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/playAndroidQuiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/title_play_android_quiz" />
+
+                <Button
+                    android:id="@+id/playGeographicalQuiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/title_play_geographical_quiz" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/theme2LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/playAutoBrandQuiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/title_play_auto_brand_quiz" />
+
+                <Button
+                    android:id="@+id/playScienceQuiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/title_play_science_quiz" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
         <Button
             android:id="@+id/registrationButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorPrimary"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="30sp"
-            android:layout_marginEnd="30sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:paddingStart="@dimen/button_padding"
             android:paddingEnd="@dimen/button_padding"
             android:text="@string/registration_button_text"
+            android:visibility="gone"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/playGeographicalGame"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="8dp" />
-
-        <Button
-            android:id="@+id/playButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:layout_marginStart="30sp"
-            android:layout_marginEnd="30sp"
-            android:backgroundTint="@color/colorPrimary"
-            android:paddingStart="@dimen/button_padding"
-            android:paddingEnd="@dimen/button_padding"
-            android:text="@string/title_play_android_quiz"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleImage"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="8dp" />
 
-        <Button
-            android:id="@+id/playGeographicalGame"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="30sp"
-            android:layout_marginEnd="30sp"
-            android:backgroundTint="@color/colorPrimary"
-            android:paddingStart="@dimen/button_padding"
-            android:paddingEnd="@dimen/button_padding"
-            android:text="@string/title_play_geographical_quiz"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/playButton"
-            tools:layout_editor_absoluteX="0dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

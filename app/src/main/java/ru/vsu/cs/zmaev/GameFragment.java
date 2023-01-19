@@ -185,6 +185,10 @@ public class GameFragment extends Fragment {
             return parseQuestionsFromTxt("geographical_quiz_questions");
         } else if (themeIDSender.getThemeID() == 0) {
             return parseQuestionsFromTxt("android_quiz_questions");
+        } else if (themeIDSender.getThemeID() == 2) {
+            return parseQuestionsFromTxt("car_brand_questions");
+        } else if (themeIDSender.getThemeID() == 3) {
+            return parseQuestionsFromTxt("science_questions");
         }
         return null;
     }

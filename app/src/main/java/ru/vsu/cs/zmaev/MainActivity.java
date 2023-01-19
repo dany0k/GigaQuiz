@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
             setDrawerLocked();
         }
         // User
-//        JsonAdapter.clearMyFiles(this);
+        JsonAdapter.clearMyFiles(this);
     }
 
     @Override
