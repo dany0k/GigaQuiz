@@ -34,6 +34,7 @@
     <string name="categories_result">Результат по категориям</string>
     <string name="android_result">Андроид:</string>
     <string name="geographical_result">География:</string>
+    <string name="registration_button_text">Регистрация</string>
 
     <string-array name="countriesNames">
         <item>Азербайджан</item>
