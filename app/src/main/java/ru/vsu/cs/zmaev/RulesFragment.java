@@ -21,4 +21,5 @@ public class RulesFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.fragment_rules, container, false);
     }
+
 }

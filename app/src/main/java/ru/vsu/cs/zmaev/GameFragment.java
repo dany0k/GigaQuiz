@@ -94,12 +94,6 @@ public class GameFragment extends Fragment {
         binding.setGame(this);
     }
 
-    @Override
-    public void onDestroyView() {
-        ((MainActivity) getActivity()).setDrawerUnlocked();
-        super.onDestroyView();
-    }
-
     private void precessButton(View view, Button button) {
         // Checking is this the last question
         if (questionIndex > questions.size() - 2) {

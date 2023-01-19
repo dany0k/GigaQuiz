@@ -33,6 +33,7 @@ public class GameResultFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_result, container, false);
+        ((MainActivity) getActivity()).setDrawerLocked();
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         correctAnswersCounter = sharedViewModel.getCorrectAnswers();
         incorrectAnswersCounter = sharedViewModel.getIncorrectAnswers();
@@ -40,6 +41,12 @@ public class GameResultFragment extends Fragment {
             Navigation.findNavController(v).navigate(R.id.action_gameResultFragment_to_titleFragment);
         });
         return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        ((MainActivity) getActivity()).setDrawerUnlocked();
+        super.onDestroyView();
     }
 
     @Override

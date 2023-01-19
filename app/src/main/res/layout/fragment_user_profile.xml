@@ -11,13 +11,13 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fragment_user_profile"
+        android:id="@+id/fragmentUserProfile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/background_profile"
+            android:id="@+id/backgroundProfile"
             android:layout_width="match_parent"
             android:layout_height="200sp"
             android:background="@color/colorPrimaryDark"
@@ -29,7 +29,7 @@
         </ImageView>
 
         <ImageButton
-            android:id="@+id/edit_profile_button"
+            android:id="@+id/editProfileButton"
             android:layout_width="39dp"
             android:layout_height="38dp"
             android:layout_marginStart="5sp"
@@ -42,7 +42,7 @@
             app:layout_constraintVertical_bias="0.206" />
 
         <ImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/profileImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/description"
@@ -51,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.124"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/background_profile"
+            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
             app:layout_constraintVertical_bias="0.213"
             tools:ignore="MissingConstraints"
             tools:src="@drawable/avatar_male" />
@@ -63,13 +63,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.034"
-            app:layout_constraintStart_toEndOf="@+id/profile_image"
-            app:layout_constraintTop_toTopOf="@+id/background_profile"
+            app:layout_constraintStart_toEndOf="@+id/profileImage"
+            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
             app:layout_constraintVertical_bias="0.207"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
-                android:id="@+id/profile_username"
+                android:id="@+id/profileUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profileImage"
             android:orientation="vertical">
 
             <TextView
@@ -105,10 +105,10 @@
                 android:text="@string/categories_result"
                 android:textColor="@color/black"
                 android:textSize="30sp"
-                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+                app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
             <TextView
-                android:id="@+id/android_result"
+                android:id="@+id/androidResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
@@ -117,7 +117,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/geographical_result"
+                android:id="@+id/geographicalResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"

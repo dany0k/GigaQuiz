@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/userProfileFragment"
         android:title="@string/profile_navigation"
-        android:icon="@drawable/ic_baseline_person_24"/>
+        android:icon="@drawable/ic_baseline_person_24"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/titleFragment"
-        android:title="@string/home_page_navigation"
-        android:icon="@drawable/ic_baseline_home_24" />
+        android:title=""
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/rulesFragment"
         android:title="@string/rules_navigation"
-        android:icon="@drawable/rules"/>
+        android:icon="@drawable/rules"
+        app:showAsAction="ifRoom"/>
 </menu>
