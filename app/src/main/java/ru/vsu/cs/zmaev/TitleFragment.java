@@ -14,9 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ru.vsu.cs.zmaev.databinding.FragmentTitleBinding;
+import ru.vsu.cs.zmaev.model.JsonAdapter;
 import ru.vsu.cs.zmaev.model.ThemeIDSender;
 
 public class TitleFragment extends Fragment {
+
+    FragmentTitleBinding binding;
 
     public ThemeIDSender themeIDSender;
     int themeID = -1;
@@ -30,18 +33,29 @@ public class TitleFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         themeIDSender = new ViewModelProvider(getActivity()).get(ThemeIDSender.class);
-        FragmentTitleBinding binding = DataBindingUtil.inflate(
+         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_title, container, false);
-        binding.playButton.setOnClickListener(view -> {
-            themeID = 0;
-            themeIDSender.setThemeID(themeID);
-            Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_gameFragment);
-        });
-        binding.playGeographicalGame.setOnClickListener(v -> {
-            themeID = 1;
-            themeIDSender.setThemeID(themeID);
-            Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
-        });
+         if (JsonAdapter.isFilePresent(getContext(), "user.json")) {
+             binding.playButton.setVisibility(View.VISIBLE);
+             binding.playGeographicalGame.setVisibility(View.VISIBLE);
+             binding.registrationButton.setVisibility(View.GONE);
+             binding.playButton.setOnClickListener(view -> {
+                 themeID = 0;
+                 themeIDSender.setThemeID(themeID);
+                 Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_gameFragment);
+             });
+             binding.playGeographicalGame.setOnClickListener(v -> {
+                 themeID = 1;
+                 themeIDSender.setThemeID(themeID);
+                 Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
+             });
+         } else {
+             binding.playButton.setVisibility(View.GONE);
+             binding.playGeographicalGame.setVisibility(View.GONE);
+             binding.registrationButton.setOnClickListener(view -> {
+                Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
+             });
+         }
 
         return binding.getRoot();
     }

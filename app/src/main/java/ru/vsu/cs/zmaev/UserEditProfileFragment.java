@@ -3,6 +3,8 @@ package ru.vsu.cs.zmaev;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -35,10 +37,24 @@ public class UserEditProfileFragment extends Fragment {
 
     FragmentUserEditProfileBinding binding;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_edit_profile, container, false);
+
+        if (!JsonAdapter.isFilePresent(getContext(), "user.json")) {
+            ((MainActivity) getActivity()).setDrawerLocked();
+            binding.submitButton.setOnClickListener(v -> {
+                User newUser = new User();
+                validateUser(newUser);
+                JsonAdapter.createJsonFile(getContext(), "user.json", newUser.toJson().toString());
+                ((MainActivity) getActivity()).setDrawerUnlocked();
+                Navigation.findNavController(v).navigate(R.id.action_userEditProfileFragment_to_titleFragment);
+            });
+            return binding.getRoot();
+        }
+
         String userStr = JsonAdapter.readJsonFile(getContext(), "user.json");
         User user = new User();
         try {
@@ -52,7 +68,7 @@ public class UserEditProfileFragment extends Fragment {
         binding.editName.setText("den");
         binding.countrySpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.countriesNames)).indexOf(user.getCountry()));
         age = user.getAge();
-//            sex = user.getSex();
+//        sex = user.getSex();
         binding.submitButton.setOnClickListener(v -> {
             User newUser = new User();
             try {
@@ -65,8 +81,10 @@ public class UserEditProfileFragment extends Fragment {
             System.out.println(newUser);
             Navigation.findNavController(v).navigate(R.id.action_userEditProfileFragment_to_userProfileFragment);
         });
+
         return binding.getRoot();
     }
+
 
     private void validateUser(User user) {
         user.setName(binding.editName.getText().toString());

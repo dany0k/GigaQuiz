@@ -52,12 +52,6 @@ public class UserProfileFragment extends Fragment {
         return binding.getRoot();
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        super.onViewCreated(view, savedInstanceState);
-    }
-
     private void showProfile(User user) {
         binding.profileUsername.setText(user.getName());
         androidResult = getResources().getString(R.string.android_result) + " " + user.getAndroidResult() + "%";
@@ -104,7 +98,9 @@ public class UserProfileFragment extends Fragment {
             case "Узбекистан":
                 countryIcon = getResources().getDrawable(R.drawable.uzbekistan);
                 break;
-
+            default:
+                countryIcon = getResources().getDrawable(R.drawable.earth);
+                break;
         }
     }
 }

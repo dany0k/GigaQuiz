@@ -90,13 +90,13 @@ public class GameFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.setLifecycleOwner(getViewLifecycleOwner());
-        ((MainActivity) getActivity()).setDrawerUnlocked();
+        ((MainActivity) getActivity()).setDrawerLocked();
         binding.setGame(this);
     }
 
     @Override
     public void onDestroyView() {
-        ((MainActivity) getActivity()).setDrawerLocked();
+        ((MainActivity) getActivity()).setDrawerUnlocked();
         super.onDestroyView();
     }
 

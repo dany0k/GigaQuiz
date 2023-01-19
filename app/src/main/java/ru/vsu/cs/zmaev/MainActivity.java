@@ -15,34 +15,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.util.JsonParserSequence;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
 import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
+import ru.vsu.cs.zmaev.model.JsonAdapter;
 import ru.vsu.cs.zmaev.model.MyDrawerController;
-import ru.vsu.cs.zmaev.model.User;
 
 public class MainActivity extends AppCompatActivity implements MyDrawerController {
 
@@ -64,8 +41,11 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
         NavigationUI.setupActionBarWithNavController(this, upperNavController, drawerLayout);
         NavigationUI.setupWithNavController(binding.upperNavView, upperNavController);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (!JsonAdapter.isFilePresent(this, "user.json")) {
+            setDrawerLocked();
+        }
         // User
-
+//        JsonAdapter.clearMyFiles(this);
     }
 
     @Override
@@ -75,12 +55,12 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
     }
 
     @Override
-    public void setDrawerLocked() {
+    public void setDrawerUnlocked() {
         bottomNavigationView.setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void setDrawerUnlocked() {
+    public void setDrawerLocked() {
         bottomNavigationView.setVisibility(View.GONE);
     }
 

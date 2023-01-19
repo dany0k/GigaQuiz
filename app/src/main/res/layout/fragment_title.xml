@@ -25,6 +25,23 @@
             app:layout_constraintVertical_bias="0.171"
             app:srcCompat="@drawable/giga_quiz_logo" />
 
+        <Button
+            android:id="@+id/registrationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:paddingStart="@dimen/button_padding"
+            android:paddingEnd="@dimen/button_padding"
+            android:text="@string/registration_button_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/playGeographicalGame"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp" />
 
         <Button
             android:id="@+id/playButton"
