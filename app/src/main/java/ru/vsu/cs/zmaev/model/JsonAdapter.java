@@ -44,4 +44,12 @@ public class JsonAdapter {
             return false;
         }
     }
+
+    public static void clearMyFiles(Context context) {
+        File[] files = context.getFilesDir().listFiles();
+        if(files != null)
+            for(File file : files) {
+                file.delete();
+            }
+    }
 }
