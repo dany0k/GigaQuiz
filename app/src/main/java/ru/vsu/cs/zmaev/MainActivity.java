@@ -1,24 +1,20 @@
 package ru.vsu.cs.zmaev;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
-import ru.vsu.cs.zmaev.model.JsonAdapter;
+import ru.vsu.cs.zmaev.tools.FileTools;
 import ru.vsu.cs.zmaev.model.MyDrawerController;
 
 public class MainActivity extends AppCompatActivity implements MyDrawerController {
@@ -47,11 +43,11 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
         NavigationUI.setupActionBarWithNavController(this, upperNavController, drawerLayout);
         NavigationUI.setupWithNavController(binding.upperNavView, upperNavController);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        if (!JsonAdapter.isFilePresent(this, "user.json")) {
+        if (!FileTools.isFilePresent(this, "user.json")) {
             setDrawerLocked();
         }
         // User
-        JsonAdapter.clearMyFiles(this);
+//        FileTools.clearMyFiles(this);
     }
 
     @Override

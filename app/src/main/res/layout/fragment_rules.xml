@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/giga_quiz_logo"
+            app:srcCompat="@drawable/title_logo"
             android:contentDescription="@string/description" />
 
         <TextView
@@ -35,8 +35,8 @@
             android:layout_marginEnd="@dimen/horizontal_margin"
             android:text="@string/rules_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/white"
-            android:fontFamily="monospace"
+            android:textColor="@color/question_text_color"
+            android:fontFamily="@font/comfortaa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rulesImage" />

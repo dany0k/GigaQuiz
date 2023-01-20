@@ -74,7 +74,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text=""
-                android:textColor="@color/white"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
                 android:textSize="30sp"
                 tools:text="Даниил" />
 
@@ -103,7 +104,8 @@
                 android:layout_marginTop="20sp"
                 android:gravity="center"
                 android:text="@string/categories_result"
-                android:textColor="@color/black"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/question_text_color"
                 android:textSize="30sp"
                 app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
@@ -114,7 +116,8 @@
                 android:layout_marginTop="20sp"
                 android:text="@{user.androidResult}"
                 android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/question_text_color"/>
 
             <TextView
                 android:id="@+id/geographicalResult"
@@ -123,7 +126,8 @@
                 android:layout_marginTop="20sp"
                 android:text="@{user.geographicalResult}"
                 android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/question_text_color"/>
 
         </LinearLayout>
 

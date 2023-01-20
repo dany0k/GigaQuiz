@@ -17,8 +17,7 @@
     <string name="submit_button">Подтвердить</string>
     <string name="congratulations">Поздравляю!</string>
     <string name="description">description</string>
-    <string name="title_play_android_quiz">Андроид</string>
-    <string name="title_play_geographical_quiz">География</string>
+    <string name="play_quiz">Играть</string>
     <string name="your_result">Твой результат!</string>
     <string name="next_match">Выбрать тест</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -158,6 +157,13 @@
     <string-array name="sex">
         <item>Мужской</item>
         <item>Женский</item>
+    </string-array>
+
+    <string-array name="topics">
+        <item>Андроид</item>
+        <item>Марки автомобилей</item>
+        <item>География</item>
+        <item>Наука</item>
     </string-array>
 
 </resources>

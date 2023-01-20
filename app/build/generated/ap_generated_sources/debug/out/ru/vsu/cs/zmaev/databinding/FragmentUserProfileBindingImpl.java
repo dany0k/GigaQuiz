@@ -14,11 +14,11 @@ public class FragmentUserProfileBindingImpl extends FragmentUserProfileBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.background_profile, 4);
-        sViewsWithIds.put(R.id.edit_profile_button, 5);
-        sViewsWithIds.put(R.id.profile_image, 6);
+        sViewsWithIds.put(R.id.backgroundProfile, 4);
+        sViewsWithIds.put(R.id.editProfileButton, 5);
+        sViewsWithIds.put(R.id.profileImage, 6);
         sViewsWithIds.put(R.id.linearLayout, 7);
-        sViewsWithIds.put(R.id.profile_username, 8);
+        sViewsWithIds.put(R.id.profileUsername, 8);
     }
     // views
     // variables

@@ -55,6 +55,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
                 android:text="@string/your_name" />
 
             <EditText
@@ -63,6 +65,8 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:hint="@string/your_name"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
                 android:autofillHints=""
                 android:inputType="textPersonName" />
 
@@ -83,10 +87,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
                 android:text="@string/country" />
 
             <Spinner
                 android:id="@+id/countrySpinner"
+                style="@style/mySpinnerItemStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:spinnerMode="dropdown"
@@ -113,10 +120,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:textColor="@color/question_text_color"
+                    android:fontFamily="@font/comfortaa"
                     android:text="@string/age" />
 
                 <Spinner
                     android:id="@+id/ageSpinner"
+                    style="@style/mySpinnerItemStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:spinnerMode="dropdown"
@@ -133,10 +143,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:textColor="@color/question_text_color"
+                    android:fontFamily="@font/comfortaa"
                     android:text="@string/sex" />
 
                 <Spinner
                     android:id="@+id/sex_spinner"
+                    style="@style/mySpinnerItemStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:spinnerMode="dropdown"

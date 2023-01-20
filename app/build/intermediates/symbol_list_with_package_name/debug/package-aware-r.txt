@@ -77,6 +77,7 @@ animator nav_default_pop_exit_anim
 array age
 array countriesNames
 array sex
+array topics
 attr SharedValue
 attr SharedValueId
 attr action
@@ -1882,6 +1883,7 @@ color primary_text_disabled_material_light
 color purple_200
 color purple_500
 color purple_700
+color question_text_color
 color resultGameColor
 color ripple_material_dark
 color ripple_material_light
@@ -2611,10 +2613,12 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable alfa_romeo_logo
 drawable android
 drawable android_category_simple
 drawable argentina_flag
 drawable armenia
+drawable atom
 drawable austria
 drawable avatar_female
 drawable avatar_male
@@ -2623,6 +2627,7 @@ drawable avd_show_password
 drawable azerbaijan
 drawable bd_radio_button
 drawable belarus
+drawable bg_topic_spinner
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2631,6 +2636,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable chemistry_formula
+drawable chevrolet_logo
 drawable city
 drawable design_fab_background
 drawable design_ic_visibility
@@ -2639,8 +2646,12 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable earth
 drawable edit_profile
+drawable fish_bone
 drawable georgia
 drawable giga_quiz_logo
+drawable honda_logo
+drawable hyundai_logo
+drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_home_24
 drawable ic_baseline_person_24
 drawable ic_baseline_settings_24
@@ -2657,6 +2668,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable kazakhstan
 drawable kyrgyzstan
+drawable lose
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2728,20 +2740,32 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable opel_logo
+drawable peugeot_logo
+drawable planet
 drawable rules
 drawable russia
+drawable scient_bottle
+drawable seat_logo
 drawable settings
 drawable share
+drawable subaru_logo
+drawable suzuki_logo
 drawable tajikistan
 drawable test_level_drawable
+drawable title_logo
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable toyota_logo
 drawable trivia_rules
 drawable try_again
 drawable turkmenistan
 drawable ukraine
 drawable uzbekistan
+drawable victory
 drawable you_win
+font comfortaa
+font fredokaone
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2817,6 +2841,8 @@ id action_mode_close_button
 id action_text
 id action_titleFragment_to_gameFragment
 id action_titleFragment_to_geographicalGameFragment
+id action_titleFragment_to_userEditProfileFragment
+id action_userEditProfileFragment_to_titleFragment
 id action_userEditProfileFragment_to_userProfileFragment
 id action_userProfileFragment_to_userEditProfileFragment
 id actions
@@ -2828,7 +2854,7 @@ id aligned
 id all
 id allStates
 id always
-id android_result
+id androidResult
 id androidx_window_activity_scope
 id animateToEnd
 id animateToStart
@@ -2841,7 +2867,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id background_profile
+id backgroundProfile
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2849,16 +2875,14 @@ id beginning
 id bestChoice
 id blocking
 id bottom
-id bottom_nav_view
+id bottomAppBar
+id bottomNavCL
+id bottomNavigationView
 id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
-id button_first_answer
-id button_fourth_answer
-id button_second_answer
-id button_third_answer
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2935,8 +2959,8 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editProfileButton
 id edit_name
-id edit_profile_button
 id edit_query
 id elastic
 id embed
@@ -2947,11 +2971,13 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fade
 id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstAnswerButton
 id fitCenter
 id fitEnd
 id fitStart
@@ -2961,8 +2987,9 @@ id fixed
 id flip
 id floating
 id forever
+id fourthAnswerButton
+id fragmentUserProfile
 id fragment_container_view_tag
-id fragment_user_profile
 id frameLayout
 id frost
 id fullscreen_header
@@ -2971,7 +2998,7 @@ id gameOverConstraintLayout
 id gameResultFragment
 id gameWonConstraintLayout
 id geographicalGameFragment
-id geographical_result
+id geographicalResult
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3080,7 +3107,6 @@ id navHeader
 id navHeaderImage
 id nav_controller_view_tag
 id nav_host_fragment_container
-id nav_settings
 id navigation
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
@@ -3122,12 +3148,11 @@ id peekHeight
 id percent
 id pin
 id playButton
-id playGeographicalGame
 id position
 id postLayout
 id pressed
-id profile_image
-id profile_username
+id profileImage
+id profileUsername
 id progress_circular
 id progress_horizontal
 id questionImage
@@ -3135,6 +3160,7 @@ id questionText
 id radio
 id ratio
 id rectangles
+id registrationButton
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3166,6 +3192,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id secondAnswerButton
 id select_dialog_listview
 id selected
 id selection_type
@@ -3233,6 +3260,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
@@ -3243,6 +3271,8 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id themeTextView
+id thirdAnswerButton
 id time
 id title
 id titleConstraint
@@ -3253,6 +3283,7 @@ id title_template
 id toggle
 id top
 id topPanel
+id topicsSpinner
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3268,7 +3299,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id upper_nav_view
+id upperNavView
 id useLogo
 id userEditProfileFragment
 id userProfileFragment
@@ -3550,6 +3581,7 @@ string categories_result
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string choose_theme_text
 string clear_text_end_icon_content_description
 string congratulations
 string country
@@ -3567,6 +3599,7 @@ string hide_bottom_view_on_scroll_behavior
 string hint_age_tiet
 string hint_country_til
 string hint_name_til
+string home_page_navigation
 string icon_content_description
 string item_view_role_description
 string m3_sys_motion_easing_emphasized
@@ -3600,6 +3633,7 @@ string material_timepicker_minute
 string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
+string menu_navigation
 string mtrl_badge_numberless_content_description
 string mtrl_checkbox_button_icon_path_checked
 string mtrl_checkbox_button_icon_path_group_name
@@ -3664,8 +3698,12 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string play_quiz
 string position
+string profile_navigation
+string registration_button_text
 string rules
+string rules_navigation
 string rules_text
 string search_menu_title
 string select_an_avatar
@@ -3675,8 +3713,8 @@ string submit_button
 string themes_ft
 string title_about_trivia
 string title_giga_quiz_question
-string title_play_android_quiz
-string title_play_geographical_quiz
+string title_play_auto_brand_quiz
+string title_play_science_quiz
 string title_quiz_rules
 string trivia_hint
 string try_again
@@ -4733,6 +4771,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style mySpinnerItemStyle
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

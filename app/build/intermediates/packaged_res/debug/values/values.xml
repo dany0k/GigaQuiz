@@ -45,6 +45,56 @@
         <item>48</item>
         <item>49</item>
         <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
+        <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
     </string-array>
     <string-array name="countriesNames">
         <item>Азербайджан</item>
@@ -65,17 +115,24 @@
         <item>Мужской</item>
         <item>Женский</item>
     </string-array>
+    <string-array name="topics">
+        <item>Андроид</item>
+        <item>Марки автомобилей</item>
+        <item>География</item>
+        <item>Наука</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="colorAccent">#7e53c5</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#1B434D</color>
-    <color name="colorSecondaryDark">#275D6A</color>
+    <color name="colorPrimary">#1FB6E4</color>
+    <color name="colorPrimaryDark">#E9E9E9</color>
+    <color name="colorSecondaryDark">#1FB6E4</color>
     <color name="correctAnswer">#98CF93</color>
     <color name="gameOverBackground">#f8bbd0</color>
     <color name="incorrectAnswer">#DB7474</color>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#1B434D</color>
-    <color name="purple_700">#1B434D</color>
+    <color name="purple_500">#1FB6E4</color>
+    <color name="purple_700">#147C9C</color>
+    <color name="question_text_color">#444141</color>
     <color name="resultGameColor">#CEE257</color>
     <color name="teal_200">#FFFFFFFF</color>
     <color name="teal_700">#FFFFFFFF</color>
@@ -98,6 +155,7 @@
     <string name="android_result">Андроид:</string>
     <string name="app_name">GigaQuiz</string>
     <string name="categories_result">Результат по категориям</string>
+    <string name="choose_theme_text">Темы</string>
     <string name="congratulations">Поздравляю!</string>
     <string name="country">Страна</string>
     <string name="description">description</string>
@@ -108,19 +166,25 @@
     <string name="hint_age_tiet">54</string>
     <string name="hint_country_til">Россия</string>
     <string name="hint_name_til">Даниил</string>
+    <string name="home_page_navigation">На главную</string>
+    <string name="menu_navigation">Меню</string>
     <string name="next_match">Выбрать тест</string>
+    <string name="play_quiz">Играть</string>
     <string name="position">Position</string>
+    <string name="profile_navigation">Профиль</string>
+    <string name="registration_button_text">Регистрация</string>
     <string name="rules">Правила</string>
+    <string name="rules_navigation">Правила</string>
     <string name="rules_text">\tВыбери ответ из предложенных вариантов.\n
-        \n\tЕсли ты ответил неправильно, не расстраивайся! После завершения теста, ты всегда можешь вернуться к нему еще раз. В конце теста ты можете увидеть свой результат.</string>
+        \n\tЕсли ты ответил неправильно, не расстраивайся! После завершения теста, ты всегда можешь вернуться к нему еще раз. В конце теста ты можешь увидеть свой результат.</string>
     <string name="select_an_avatar">Select an Avatar</string>
     <string name="sex">Пол</string>
     <string name="submit_button">Подтвердить</string>
     <string name="themes_ft">Темы</string>
     <string name="title_about_trivia">GigaQuiz</string>
     <string name="title_giga_quiz_question">GigaQuiz (%1$d/%2$d)</string>
-    <string name="title_play_android_quiz">Android Quiz</string>
-    <string name="title_play_geographical_quiz">Географический Quiz</string>
+    <string name="title_play_auto_brand_quiz">Марки авто</string>
+    <string name="title_play_science_quiz">Наука</string>
     <string name="title_quiz_rules">GigaQuiz Rules</string>
     <string name="trivia_hint">Trivia Hint</string>
     <string name="try_again">Try Again?</string>
@@ -138,5 +202,11 @@
         
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         
+    </style>
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/comfortaa</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

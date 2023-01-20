@@ -11,13 +11,13 @@
            
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fragment_user_profile"
+        android:id="@+id/fragmentUserProfile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white" android:tag="layout/fragment_user_edit_profile_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="ru.vsu.cs.zmaev.UserEditProfileFragment">
 
         <ImageView
-            android:id="@+id/background_profile"
+            android:id="@+id/backgroundProfile"
             android:layout_width="match_parent"
             android:layout_height="200sp"
             android:background="@color/colorPrimaryDark"
@@ -29,7 +29,7 @@
         </ImageView>
 
         <ImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/profileImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/description"
@@ -37,7 +37,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/background_profile"
+            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
             app:layout_constraintVertical_bias="0.211"
             tools:ignore="MissingConstraints"
             tools:src="@drawable/avatar_male" />
@@ -50,19 +50,25 @@
             android:layout_marginEnd="20sp"
             android:layout_marginTop="20sp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image">
+            app:layout_constraintTop_toBottomOf="@+id/profileImage">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
                 android:text="@string/your_name" />
 
             <EditText
                 android:id="@+id/edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:tag="binding_1"        
-                android:hint="@string/your_name" />
+                android:text=""
+                android:hint="@string/your_name"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
+                android:autofillHints=""
+                android:inputType="textPersonName" />
 
         </LinearLayout>
 
@@ -81,13 +87,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
                 android:text="@string/country" />
 
             <Spinner
                 android:id="@+id/countrySpinner"
+                style="@style/mySpinnerItemStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:tag="binding_2"            
                 android:spinnerMode="dropdown"
                 android:entries="@array/countriesNames"/>
 
@@ -112,12 +120,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:textColor="@color/question_text_color"
+                    android:fontFamily="@font/comfortaa"
                     android:text="@string/age" />
 
                 <Spinner
                     android:id="@+id/ageSpinner"
+                    style="@style/mySpinnerItemStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
                     android:entries="@array/age"/>
 
             </LinearLayout>
@@ -131,10 +143,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:textColor="@color/question_text_color"
+                    android:fontFamily="@font/comfortaa"
                     android:text="@string/sex" />
 
                 <Spinner
                     android:id="@+id/sex_spinner"
+                    style="@style/mySpinnerItemStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:spinnerMode="dropdown"

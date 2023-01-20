@@ -14,8 +14,7 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.nextMatchButton, 2);
-        sViewsWithIds.put(R.id.youWinImage, 3);
+        sViewsWithIds.put(R.id.nextMatchButton, 3);
     }
     // views
     // variables
@@ -29,12 +28,13 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
     private FragmentGameResultBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
-            , (android.widget.Button) bindings[2]
+            , (android.widget.Button) bindings[3]
             , (android.widget.TextView) bindings[1]
-            , (android.widget.ImageView) bindings[3]
+            , (android.widget.ImageView) bindings[2]
             );
         this.gameWonConstraintLayout.setTag(null);
         this.textView.setTag(null);
+        this.youWinImage.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -94,6 +94,7 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
             mDirtyFlags = 0;
         }
         java.lang.String viewModelSendAnswers = null;
+        android.graphics.drawable.Drawable viewModelResultDrawable = null;
         ru.vsu.cs.zmaev.GameResultFragment viewModel = mViewModel;
 
         if ((dirtyFlags & 0x3L) != 0) {
@@ -103,6 +104,8 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
                 if (viewModel != null) {
                     // read viewModel.sendAnswers()
                     viewModelSendAnswers = viewModel.sendAnswers();
+                    // read viewModel.resultDrawable()
+                    viewModelResultDrawable = viewModel.resultDrawable();
                 }
         }
         // batch finished
@@ -110,6 +113,7 @@ public class FragmentGameResultBindingImpl extends FragmentGameResultBinding  {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textView, viewModelSendAnswers);
+            androidx.databinding.adapters.ImageViewBindingAdapter.setImageDrawable(this.youWinImage, viewModelResultDrawable);
         }
     }
     // Listener Stub Implementations

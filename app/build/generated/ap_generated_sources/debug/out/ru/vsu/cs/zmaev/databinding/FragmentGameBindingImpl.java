@@ -31,20 +31,20 @@ public class FragmentGameBindingImpl extends FragmentGameBinding  {
     private FragmentGameBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[2]
-            , (android.widget.Button) bindings[4]
-            , (android.widget.Button) bindings[3]
             , (android.widget.Button) bindings[5]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[6]
             , (android.widget.ImageView) bindings[7]
             , (android.widget.TextView) bindings[1]
+            , (android.widget.Button) bindings[3]
+            , (android.widget.Button) bindings[4]
             );
-        this.buttonFirstAnswer.setTag(null);
-        this.buttonFourthAnswer.setTag(null);
-        this.buttonSecondAnswer.setTag(null);
-        this.buttonThirdAnswer.setTag(null);
+        this.firstAnswerButton.setTag(null);
+        this.fourthAnswerButton.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.questionText.setTag(null);
+        this.secondAnswerButton.setTag(null);
+        this.thirdAnswerButton.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -143,11 +143,11 @@ public class FragmentGameBindingImpl extends FragmentGameBinding  {
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonFirstAnswer, gameAnswers0);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonFourthAnswer, gameAnswers3);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonSecondAnswer, gameAnswers1);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.buttonThirdAnswer, gameAnswers2);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.firstAnswerButton, gameAnswers0);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.fourthAnswerButton, gameAnswers3);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.questionText, gameCurrentQuestionGetText);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.secondAnswerButton, gameAnswers1);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.thirdAnswerButton, gameAnswers2);
         }
     }
     // Listener Stub Implementations

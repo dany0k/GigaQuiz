@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#1B434D</color>
-    <color name="purple_700">#1B434D</color>
+    <color name="purple_500">#1FB6E4</color>
+    <color name="purple_700">#147C9C</color>
     <color name="teal_200">#FFFFFFFF</color>
     <color name="teal_700">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#1B434D</color>
-    <color name="colorSecondaryDark">#275D6A</color>
+    <color name="colorPrimary">#1FB6E4</color>
+    <color name="colorPrimaryDark">#E9E9E9</color>
+    <color name="colorSecondaryDark">#1FB6E4</color>
     <color name="colorAccent">#7e53c5</color>
     <color name="youWinDark">#35A571</color>
     <color name="youWinBackground">#B7F8C9</color>
@@ -17,4 +17,5 @@
     <color name="resultGameColor">#CEE257</color>
     <color name="correctAnswer">#98CF93</color>
     <color name="incorrectAnswer">#DB7474</color>
+    <color name="question_text_color">#444141</color>
 </resources>

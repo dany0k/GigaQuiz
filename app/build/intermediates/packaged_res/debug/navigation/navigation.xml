@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_titleFragment_to_geographicalGameFragment"
             app:destination="@id/geographicalGameFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_userEditProfileFragment"
+            app:destination="@id/userEditProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -43,8 +46,7 @@
         <action
             android:id="@+id/action_gameResultFragment_to_titleFragment"
             app:destination="@id/titleFragment"
-            app:popUpTo="@id/gameFragment"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/titleFragment" />
     </fragment>
     <fragment
         android:id="@+id/geographicalGameFragment"
@@ -71,5 +73,8 @@
         <action
             android:id="@+id/action_userEditProfileFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_userEditProfileFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
     </fragment>
 </navigation>

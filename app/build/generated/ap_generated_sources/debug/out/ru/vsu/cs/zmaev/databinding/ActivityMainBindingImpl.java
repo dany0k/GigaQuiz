@@ -14,8 +14,11 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.bottom_nav_view, 1);
-        sViewsWithIds.put(R.id.upper_nav_view, 2);
+        sViewsWithIds.put(R.id.bottomNavCL, 1);
+        sViewsWithIds.put(R.id.bottomAppBar, 2);
+        sViewsWithIds.put(R.id.bottomNavigationView, 3);
+        sViewsWithIds.put(R.id.fab, 4);
+        sViewsWithIds.put(R.id.upperNavView, 5);
     }
     // views
     // variables
@@ -24,13 +27,16 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.bottomnavigation.BottomNavigationView) bindings[1]
+            , (com.google.android.material.bottomappbar.BottomAppBar) bindings[2]
+            , (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[1]
+            , (com.google.android.material.bottomnavigation.BottomNavigationView) bindings[3]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
-            , (com.google.android.material.navigation.NavigationView) bindings[2]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[4]
+            , (com.google.android.material.navigation.NavigationView) bindings[5]
             );
         this.drawerLayout.setTag(null);
         setRootTag(root);

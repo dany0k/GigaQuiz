@@ -1,5 +1,6 @@
 package ru.vsu.cs.zmaev;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -61,4 +62,11 @@ public class GameResultFragment extends Fragment {
         return "Верные ответы: " + correctAnswersCounter + "\n" + "Неверные ответы: " + incorrectAnswersCounter;
     }
 
+    public Drawable resultDrawable() {
+        if (incorrectAnswersCounter > correctAnswersCounter) {
+            return getResources().getDrawable(R.drawable.lose);
+        } else {
+            return getResources().getDrawable(R.drawable.victory);
+        }
+    }
 }

@@ -15,18 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
-import ru.vsu.cs.zmaev.model.ThemeIDSender;
+import ru.vsu.cs.zmaev.model.QuestionBankSender;
 
 public class GameFragment extends Fragment {
 
@@ -35,7 +30,7 @@ public class GameFragment extends Fragment {
     FragmentGameBinding binding = null;
 
     public AnswersViewModel sharedViewModel;
-    private ThemeIDSender themeIDSender;
+    private QuestionBankSender questionBankSender;
     public GameFragment() {
         super(R.layout.fragment_game);
     }
@@ -57,33 +52,35 @@ public class GameFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
-        themeIDSender = new ViewModelProvider(getActivity()).get(ThemeIDSender.class);
-        try {
-            questions = getQuizTheme();
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-        }
+        questionBankSender = new ViewModelProvider(getActivity()).get(QuestionBankSender.class);
+        questions = questionBankSender.getTopicQuestion();
 
         randomizeQuestions();
         binding.setGame(GameFragment.this);
-        binding.buttonFirstAnswer.setOnClickListener(v -> {
+        binding.firstAnswerButton.setOnClickListener(v -> {
             answerIndex = 0;
-            precessButton(v, binding.buttonFirstAnswer);
+            precessButton(v, binding.firstAnswerButton);
         });
-        binding.buttonSecondAnswer.setOnClickListener(v -> {
+        binding.secondAnswerButton.setOnClickListener(v -> {
             answerIndex = 1;
-            precessButton(v, binding.buttonSecondAnswer);
+            precessButton(v, binding.secondAnswerButton);
         });
-        binding.buttonThirdAnswer.setOnClickListener(v -> {
+        binding.thirdAnswerButton.setOnClickListener(v -> {
             answerIndex = 2;
-            precessButton(v, binding.buttonThirdAnswer);
+            precessButton(v, binding.thirdAnswerButton);
         });
-        binding.buttonFourthAnswer.setOnClickListener(v -> {
+        binding.fourthAnswerButton.setOnClickListener(v -> {
             answerIndex = 3;
-            precessButton(v, binding.buttonFourthAnswer);
+            precessButton(v, binding.fourthAnswerButton);
         });
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        ((MainActivity) getActivity()).setDrawerUnlocked();
+        super.onDestroyView();
     }
 
     @Override
@@ -139,51 +136,5 @@ public class GameFragment extends Fragment {
         correctAnswer = currentQuestion.getAnswers().get(0);
         answers = questions.get(questionIndex).getAnswers();
         Collections.shuffle(answers);
-    }
-
-    private List<ImageQuestion> parseQuestionsFromTxt(String fileName) throws IOException, URISyntaxException {
-        String str;
-        List<ImageQuestion> questionsBank = new ArrayList<>();
-        try {
-            InputStream inputStream = getContext().getAssets().open(fileName);
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            str = new String(buffer);
-            String[] splitRow = str.split("\n");
-            String questionName;
-            String questionAnswers;
-            String questionImageName;
-            for (int i = 0; i < splitRow.length; i++) {
-                String[] splitQuestions = splitRow[i].split("\n");
-                for (int j = 0; j < splitQuestions.length; j++) {
-                    String[] splitQuestion = splitQuestions[j].split(":");
-                    questionName = splitQuestion[0];
-                    questionAnswers = splitQuestion[1];
-                    questionImageName = splitQuestion[2].trim();
-                    int imageID = getResources().getIdentifier(questionImageName, "drawable", getContext().getPackageName());
-                    System.out.println(imageID);
-                    String[] answers = questionAnswers.split(";");
-                    ImageQuestion question = new ImageQuestion(questionName, Arrays.asList(answers), imageID);
-                    questionsBank.add(question);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return questionsBank;
-    }
-
-    private List<ImageQuestion> getQuizTheme() throws IOException, URISyntaxException {
-        if (themeIDSender.getThemeID() == 1) {
-            return parseQuestionsFromTxt("geographical_quiz_questions");
-        } else if (themeIDSender.getThemeID() == 0) {
-            return parseQuestionsFromTxt("android_quiz_questions");
-        } else if (themeIDSender.getThemeID() == 2) {
-            return parseQuestionsFromTxt("car_brand_questions");
-        } else if (themeIDSender.getThemeID() == 3) {
-            return parseQuestionsFromTxt("science_questions");
-        }
-        return null;
     }
 }

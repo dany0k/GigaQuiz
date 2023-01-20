@@ -1,10 +1,7 @@
 package ru.vsu.cs.zmaev;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -12,7 +9,6 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Spinner;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,16 +16,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Arrays;
 
 import ru.vsu.cs.zmaev.databinding.FragmentUserEditProfileBinding;
-import ru.vsu.cs.zmaev.model.JsonAdapter;
+import ru.vsu.cs.zmaev.tools.FileTools;
+import ru.vsu.cs.zmaev.tools.JSONTools;
 import ru.vsu.cs.zmaev.model.User;
 
 
 public class UserEditProfileFragment extends Fragment {
-
-    public String username = "den";
-    public int country;
-    public int age;
-    public int sex;
 
     public UserEditProfileFragment() {
         super(R.layout.fragment_user_edit_profile);
@@ -43,19 +35,19 @@ public class UserEditProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_edit_profile, container, false);
 
-        if (!JsonAdapter.isFilePresent(getContext(), "user.json")) {
+        if (!FileTools.isFilePresent(getContext(), "user.json")) {
             ((MainActivity) getActivity()).setDrawerLocked();
             binding.submitButton.setOnClickListener(v -> {
                 User newUser = new User();
                 validateUser(newUser);
-                JsonAdapter.createJsonFile(getContext(), "user.json", newUser.toJson().toString());
+                JSONTools.createJsonFile(getContext(), "user.json", newUser.toJson().toString());
                 ((MainActivity) getActivity()).setDrawerUnlocked();
                 Navigation.findNavController(v).navigate(R.id.action_userEditProfileFragment_to_titleFragment);
             });
             return binding.getRoot();
         }
 
-        String userStr = JsonAdapter.readJsonFile(getContext(), "user.json");
+        String userStr = JSONTools.readJsonFile(getContext(), "user.json");
         User user = new User();
         try {
             user = new ObjectMapper().readValue(userStr, User.class);
@@ -71,7 +63,7 @@ public class UserEditProfileFragment extends Fragment {
                 e.printStackTrace();
             }
             validateUser(newUser);
-            JsonAdapter.createJsonFile(getContext(), "user.json", newUser.toJson().toString());
+            JSONTools.createJsonFile(getContext(), "user.json", newUser.toJson().toString());
             System.out.println(newUser);
             Navigation.findNavController(v).navigate(R.id.action_userEditProfileFragment_to_userProfileFragment);
         });

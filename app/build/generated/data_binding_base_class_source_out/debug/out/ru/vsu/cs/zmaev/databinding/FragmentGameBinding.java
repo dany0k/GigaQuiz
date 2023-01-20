@@ -20,16 +20,10 @@ import ru.vsu.cs.zmaev.R;
 
 public abstract class FragmentGameBinding extends ViewDataBinding {
   @NonNull
-  public final Button buttonFirstAnswer;
+  public final Button firstAnswerButton;
 
   @NonNull
-  public final Button buttonFourthAnswer;
-
-  @NonNull
-  public final Button buttonSecondAnswer;
-
-  @NonNull
-  public final Button buttonThirdAnswer;
+  public final Button fourthAnswerButton;
 
   @NonNull
   public final ConstraintLayout frameLayout;
@@ -40,21 +34,27 @@ public abstract class FragmentGameBinding extends ViewDataBinding {
   @NonNull
   public final TextView questionText;
 
+  @NonNull
+  public final Button secondAnswerButton;
+
+  @NonNull
+  public final Button thirdAnswerButton;
+
   @Bindable
   protected GameFragment mGame;
 
   protected FragmentGameBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button buttonFirstAnswer, Button buttonFourthAnswer, Button buttonSecondAnswer,
-      Button buttonThirdAnswer, ConstraintLayout frameLayout, ImageView questionImage,
-      TextView questionText) {
+      Button firstAnswerButton, Button fourthAnswerButton, ConstraintLayout frameLayout,
+      ImageView questionImage, TextView questionText, Button secondAnswerButton,
+      Button thirdAnswerButton) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.buttonFirstAnswer = buttonFirstAnswer;
-    this.buttonFourthAnswer = buttonFourthAnswer;
-    this.buttonSecondAnswer = buttonSecondAnswer;
-    this.buttonThirdAnswer = buttonThirdAnswer;
+    this.firstAnswerButton = firstAnswerButton;
+    this.fourthAnswerButton = fourthAnswerButton;
     this.frameLayout = frameLayout;
     this.questionImage = questionImage;
     this.questionText = questionText;
+    this.secondAnswerButton = secondAnswerButton;
+    this.thirdAnswerButton = thirdAnswerButton;
   }
 
   public abstract void setGame(@Nullable GameFragment game);

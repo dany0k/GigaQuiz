@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,7 +22,13 @@ public abstract class FragmentTitleBinding extends ViewDataBinding {
   public final Button playButton;
 
   @NonNull
-  public final Button playGeographicalGame;
+  public final Button registrationButton;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
+  public final TextView themeTextView;
 
   @NonNull
   public final ConstraintLayout titleConstraint;
@@ -28,14 +36,20 @@ public abstract class FragmentTitleBinding extends ViewDataBinding {
   @NonNull
   public final ImageView titleImage;
 
+  @NonNull
+  public final Spinner topicsSpinner;
+
   protected FragmentTitleBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button playButton, Button playGeographicalGame, ConstraintLayout titleConstraint,
-      ImageView titleImage) {
+      Button playButton, Button registrationButton, TextView textView2, TextView themeTextView,
+      ConstraintLayout titleConstraint, ImageView titleImage, Spinner topicsSpinner) {
     super(_bindingComponent, _root, _localFieldCount);
     this.playButton = playButton;
-    this.playGeographicalGame = playGeographicalGame;
+    this.registrationButton = registrationButton;
+    this.textView2 = textView2;
+    this.themeTextView = themeTextView;
     this.titleConstraint = titleConstraint;
     this.titleImage = titleImage;
+    this.topicsSpinner = topicsSpinner;
   }
 
   @NonNull

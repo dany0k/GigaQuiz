@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -18,7 +16,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ru.vsu.cs.zmaev.databinding.FragmentUserProfileBinding;
-import ru.vsu.cs.zmaev.model.JsonAdapter;
+import ru.vsu.cs.zmaev.tools.JSONTools;
 import ru.vsu.cs.zmaev.model.User;
 
 public class UserProfileFragment extends Fragment {
@@ -38,7 +36,7 @@ public class UserProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_profile, container, false);
         binding.setUser(this);
-        String userStr = JsonAdapter.readJsonFile(getContext(), "user.json");
+        String userStr = JSONTools.readJsonFile(getContext(), "user.json");
         User user = new User();
         try {
             user = new ObjectMapper().readValue(userStr, User.class);

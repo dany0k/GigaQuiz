@@ -14,10 +14,12 @@ public class FragmentUserEditProfileBindingImpl extends FragmentUserEditProfileB
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.background_profile, 3);
-        sViewsWithIds.put(R.id.profile_image, 4);
-        sViewsWithIds.put(R.id.linearLayout5, 5);
-        sViewsWithIds.put(R.id.countryLinearLayout, 6);
+        sViewsWithIds.put(R.id.backgroundProfile, 1);
+        sViewsWithIds.put(R.id.profileImage, 2);
+        sViewsWithIds.put(R.id.linearLayout5, 3);
+        sViewsWithIds.put(R.id.edit_name, 4);
+        sViewsWithIds.put(R.id.countryLinearLayout, 5);
+        sViewsWithIds.put(R.id.countrySpinner, 6);
         sViewsWithIds.put(R.id.linearLayout4, 7);
         sViewsWithIds.put(R.id.ageSpinner, 8);
         sViewsWithIds.put(R.id.sex_spinner, 9);
@@ -35,19 +37,17 @@ public class FragmentUserEditProfileBindingImpl extends FragmentUserEditProfileB
     private FragmentUserEditProfileBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Spinner) bindings[8]
-            , (android.widget.ImageView) bindings[3]
-            , (android.widget.LinearLayout) bindings[6]
-            , (android.widget.Spinner) bindings[2]
-            , (android.widget.EditText) bindings[1]
+            , (android.widget.ImageView) bindings[1]
+            , (android.widget.LinearLayout) bindings[5]
+            , (android.widget.Spinner) bindings[6]
+            , (android.widget.EditText) bindings[4]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.LinearLayout) bindings[7]
-            , (android.widget.LinearLayout) bindings[5]
-            , (android.widget.ImageView) bindings[4]
+            , (android.widget.LinearLayout) bindings[3]
+            , (android.widget.ImageView) bindings[2]
             , (android.widget.Spinner) bindings[9]
             , (android.widget.Button) bindings[10]
             );
-        this.countrySpinner.setTag(null);
-        this.editName.setTag(null);
         this.fragmentUserProfile.setTag(null);
         setRootTag(root);
         // listeners
@@ -86,11 +86,6 @@ public class FragmentUserEditProfileBindingImpl extends FragmentUserEditProfileB
 
     public void setUser(@Nullable ru.vsu.cs.zmaev.UserEditProfileFragment User) {
         this.mUser = User;
-        synchronized(this) {
-            mDirtyFlags |= 0x1L;
-        }
-        notifyPropertyChanged(BR.user);
-        super.requestRebind();
     }
 
     @Override
@@ -107,28 +102,7 @@ public class FragmentUserEditProfileBindingImpl extends FragmentUserEditProfileB
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        int userCountry = 0;
-        ru.vsu.cs.zmaev.UserEditProfileFragment user = mUser;
-        java.lang.String userUsername = null;
-
-        if ((dirtyFlags & 0x3L) != 0) {
-
-
-
-                if (user != null) {
-                    // read user.country
-                    userCountry = user.country;
-                    // read user.username
-                    userUsername = user.username;
-                }
-        }
         // batch finished
-        if ((dirtyFlags & 0x3L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.AdapterViewBindingAdapter.setSelection(this.countrySpinner, userCountry);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editName, userUsername);
-        }
     }
     // Listener Stub Implementations
     // callback impls

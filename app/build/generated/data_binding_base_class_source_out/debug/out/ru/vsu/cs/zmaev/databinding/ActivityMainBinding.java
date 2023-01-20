@@ -7,9 +7,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -17,20 +20,33 @@ import ru.vsu.cs.zmaev.R;
 
 public abstract class ActivityMainBinding extends ViewDataBinding {
   @NonNull
-  public final BottomNavigationView bottomNavView;
+  public final BottomAppBar bottomAppBar;
+
+  @NonNull
+  public final CoordinatorLayout bottomNavCL;
+
+  @NonNull
+  public final BottomNavigationView bottomNavigationView;
 
   @NonNull
   public final ConstraintLayout drawerLayout;
 
   @NonNull
+  public final FloatingActionButton fab;
+
+  @NonNull
   public final NavigationView upperNavView;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      BottomNavigationView bottomNavView, ConstraintLayout drawerLayout,
-      NavigationView upperNavView) {
+      BottomAppBar bottomAppBar, CoordinatorLayout bottomNavCL,
+      BottomNavigationView bottomNavigationView, ConstraintLayout drawerLayout,
+      FloatingActionButton fab, NavigationView upperNavView) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.bottomNavView = bottomNavView;
+    this.bottomAppBar = bottomAppBar;
+    this.bottomNavCL = bottomNavCL;
+    this.bottomNavigationView = bottomNavigationView;
     this.drawerLayout = drawerLayout;
+    this.fab = fab;
     this.upperNavView = upperNavView;
   }
 

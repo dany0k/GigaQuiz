@@ -13,16 +13,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
+
 import ru.vsu.cs.zmaev.databinding.FragmentTitleBinding;
-import ru.vsu.cs.zmaev.model.JsonAdapter;
-import ru.vsu.cs.zmaev.model.ThemeIDSender;
+import ru.vsu.cs.zmaev.model.ImageQuestion;
+import ru.vsu.cs.zmaev.tools.FileTools;
+import ru.vsu.cs.zmaev.model.QuestionBankSender;
 
 public class TitleFragment extends Fragment {
 
     FragmentTitleBinding binding;
 
-    public ThemeIDSender themeIDSender;
-    int themeID = -1;
+    public QuestionBankSender questionBankSender;
 
     public TitleFragment() {
         super(R.layout.fragment_title);
@@ -32,49 +36,35 @@ public class TitleFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        themeIDSender = new ViewModelProvider(getActivity()).get(ThemeIDSender.class);
-         binding = DataBindingUtil.inflate(
+        questionBankSender = new ViewModelProvider(getActivity()).get(QuestionBankSender.class);
+        binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_title, container, false);
-         if (JsonAdapter.isFilePresent(getContext(), "user.json")) {
-             showPlayButtons();
-             binding.registrationButton.setVisibility(View.GONE);
-             binding.playAndroidQuiz.setOnClickListener(v -> {
-                 redirectToGameFragment(v, 0);
-             });
-             binding.playGeographicalQuiz.setOnClickListener(v -> {
-                 themeID = 1;
-                 themeIDSender.setThemeID(themeID);
-                 Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
-             });
-             binding.playAutoBrandQuiz.setOnClickListener(v -> {
-                 redirectToGameFragment(v, 2);
-             });
-             binding.playScienceQuiz.setOnClickListener(v -> {
-                 redirectToGameFragment(v, 3);
-             });
-         } else {
-             binding.registrationButton.setVisibility(View.VISIBLE);
-             hidePlayButtons();
-             binding.registrationButton.setOnClickListener(view -> {
+        List<String> quizTopics = FileTools.readFilesInList(getActivity(), "");
+        if (FileTools.isFilePresent(getContext(), "user.json")) {
+            binding.registrationButton.setVisibility(View.GONE);
+        } else {
+            binding.themeTextView.setVisibility(View.GONE);
+            binding.topicsSpinner.setVisibility(View.GONE);
+            binding.playButton.setVisibility(View.GONE);
+            binding.registrationButton.setVisibility(View.VISIBLE);
+            binding.registrationButton.setOnClickListener(view -> {
                 Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
-             });
-         }
+            });
+        }
+        binding.playButton.setOnClickListener(v -> {
+            try {
+                List<ImageQuestion> questionsBank = getQuizTheme(binding.topicsSpinner.getSelectedItemPosition(), quizTopics);
+                questionBankSender.setTopicQuestions(questionsBank);
+                Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
+            }
+        });
 
         return binding.getRoot();
     }
 
-    private void showPlayButtons() {
-        binding.themeTextView.setVisibility(View.VISIBLE);
-        binding.allThemesLinearLayout.setVisibility(View.VISIBLE);
-    }
-
-    private void hidePlayButtons() {
-        binding.themeTextView.setVisibility(View.GONE);
-        binding.allThemesLinearLayout.setVisibility(View.GONE);
-    }
-
-    private void redirectToGameFragment(View v, int themeID) {
-        themeIDSender.setThemeID(themeID);
-        Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
+    private List<ImageQuestion> getQuizTheme(int topicID, List<String> quizTopics) throws IOException, URISyntaxException {
+        return FileTools.parseQuestionsFromTxt(getActivity(), quizTopics.get(topicID));
     }
 }

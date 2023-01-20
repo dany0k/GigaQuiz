@@ -15,8 +15,11 @@ public class FragmentTitleBindingImpl extends FragmentTitleBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.titleImage, 1);
-        sViewsWithIds.put(R.id.playButton, 2);
-        sViewsWithIds.put(R.id.playGeographicalGame, 3);
+        sViewsWithIds.put(R.id.textView2, 2);
+        sViewsWithIds.put(R.id.themeTextView, 3);
+        sViewsWithIds.put(R.id.topicsSpinner, 4);
+        sViewsWithIds.put(R.id.playButton, 5);
+        sViewsWithIds.put(R.id.registrationButton, 6);
     }
     // views
     // variables
@@ -25,14 +28,17 @@ public class FragmentTitleBindingImpl extends FragmentTitleBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentTitleBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private FragmentTitleBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[2]
-            , (android.widget.Button) bindings[3]
+            , (android.widget.Button) bindings[5]
+            , (android.widget.Button) bindings[6]
+            , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[3]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.ImageView) bindings[1]
+            , (android.widget.Spinner) bindings[4]
             );
         this.titleConstraint.setTag(null);
         setRootTag(root);
