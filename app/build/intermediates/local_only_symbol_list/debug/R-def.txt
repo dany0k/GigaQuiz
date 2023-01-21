@@ -119,11 +119,9 @@ id fourthAnswerButton
 id fragmentUserProfile
 id frameLayout
 id gameFragment
-id gameOverConstraintLayout
 id gameResultFragment
 id gameWonConstraintLayout
 id geographicalGameFragment
-id geographicalResult
 id linearLayout
 id linearLayout4
 id linearLayout5
@@ -138,6 +136,7 @@ id profileUsername
 id questionImage
 id questionText
 id registrationButton
+id result
 id rulesFragment
 id rulesImage
 id rulesText
@@ -152,8 +151,6 @@ id titleConstraint
 id titleFragment
 id titleImage
 id topicsSpinner
-id tryAgainButton
-id tryAgainImage
 id upperNavView
 id userEditProfileFragment
 id userProfileFragment
@@ -161,9 +158,7 @@ id youWinImage
 layout activity_main
 layout fragment_about
 layout fragment_game
-layout fragment_game_over
 layout fragment_game_result
-layout fragment_game_won
 layout fragment_rules
 layout fragment_title
 layout fragment_user_edit_profile

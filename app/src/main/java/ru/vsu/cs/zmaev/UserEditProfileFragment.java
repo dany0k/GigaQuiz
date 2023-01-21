@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 import java.util.Arrays;
+import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentUserEditProfileBinding;
 import ru.vsu.cs.zmaev.tools.FileTools;
@@ -39,6 +41,9 @@ public class UserEditProfileFragment extends Fragment {
             ((MainActivity) getActivity()).setDrawerLocked();
             binding.submitButton.setOnClickListener(v -> {
                 User newUser = new User();
+                String[] topics = getActivity().getResources().getStringArray(R.array.topics);
+                newUser.setTopics(new Gson().toJson(topics));
+                newUser.setResults(new Gson().toJson(new int[topics.length]));
                 validateUser(newUser);
                 JSONTools.createJsonFile(getContext(), "user.json", newUser.toJson().toString());
                 ((MainActivity) getActivity()).setDrawerUnlocked();

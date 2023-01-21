@@ -1,7 +1,13 @@
 package ru.vsu.cs.zmaev.model;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class User {
@@ -12,20 +18,20 @@ public class User {
     private int iconID;
     private String country;
     private String sex;
-    private float androidResult;
-    private float geographicalResult;
+    private String topics;
+    private String results;
     public User() {
     }
 
-    public User(String name, int age, int progress, int iconID, String country, String sex, float androidResult, float geographicalResult) {
+    public User(String name, int age, int progress, int iconID, String country, String sex, String topics, String results) {
         this.name = name;
         this.age = age;
         this.progress = progress;
         this.iconID = iconID;
         this.country = country;
         this.sex = sex;
-        this.androidResult = androidResult;
-        this.geographicalResult = geographicalResult;
+        this.topics = topics;
+        this.results = results;
     }
 
     public String getName() {
@@ -76,25 +82,24 @@ public class User {
         this.sex = sex;
     }
 
-    public float getAndroidResult() {
-        return androidResult;
+    public String getTopics() {
+        return topics;
     }
 
-    public void setAndroidResult(float androidResult) {
-        this.androidResult = androidResult;
+    public void setTopics(String topics) {
+        this.topics = topics;
     }
 
-    public float getGeographicalResult() {
-        return geographicalResult;
+    public String getResults() {
+        return results;
     }
 
-    public void setGeographicalResult(float geographicalResult) {
-        this.geographicalResult = geographicalResult;
+    public void setResults(String results) {
+        this.results = results;
     }
 
     public JSONObject toJson() {
         JSONObject userJSON = new JSONObject();
-
         try {
             userJSON.put("name", name);
             userJSON.put("age", age);
@@ -102,8 +107,8 @@ public class User {
             userJSON.put("iconID", iconID);
             userJSON.put("country", country);
             userJSON.put("sex", sex);
-            userJSON.put("androidResult", androidResult);
-            userJSON.put("geographicalResult", geographicalResult);
+            userJSON.put("topics", new Gson().toJson(topics).replaceAll("\\\\", ""));
+            userJSON.put("results", new Gson().toJson(results));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -119,8 +124,8 @@ public class User {
                 ", iconID=" + iconID +
                 ", country='" + country + '\'' +
                 ", sex='" + sex + '\'' +
-                ", androidResult=" + androidResult +
-                ", geographicalResult=" + geographicalResult +
+                ", topics=" + topics +
+                ", results=" + results +
                 '}';
     }
 }

@@ -2994,11 +2994,9 @@ id frameLayout
 id frost
 id fullscreen_header
 id gameFragment
-id gameOverConstraintLayout
 id gameResultFragment
 id gameWonConstraintLayout
 id geographicalGameFragment
-id geographicalResult
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3161,6 +3159,7 @@ id radio
 id ratio
 id rectangles
 id registrationButton
+id result
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3293,8 +3292,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tryAgainButton
-id tryAgainImage
 id unchecked
 id uniform
 id unlabeled
@@ -3464,9 +3461,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_about
 layout fragment_game
-layout fragment_game_over
 layout fragment_game_result
-layout fragment_game_won
 layout fragment_rules
 layout fragment_title
 layout fragment_user_edit_profile

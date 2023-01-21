@@ -114,20 +114,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
-                android:tag="binding_2"             
                 android:textSize="20sp"
                 android:fontFamily="@font/comfortaa"
                 android:textColor="@color/question_text_color"/>
 
             <TextView
-                android:id="@+id/geographicalResult"
-                android:layout_width="match_parent"
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20sp"
-                android:tag="binding_3"                  
-                android:textSize="20sp"
                 android:fontFamily="@font/comfortaa"
-                android:textColor="@color/question_text_color"/>
+                android:textColor="@color/question_text_color"
+                android:textSize="20sp"
+                android:text=""/>
 
         </LinearLayout>
 

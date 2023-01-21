@@ -53,8 +53,10 @@ public class TitleFragment extends Fragment {
         }
         binding.playButton.setOnClickListener(v -> {
             try {
-                List<ImageQuestion> questionsBank = getQuizTheme(binding.topicsSpinner.getSelectedItemPosition(), quizTopics);
+                int topicID = binding.topicsSpinner.getSelectedItemPosition();
+                List<ImageQuestion> questionsBank = getQuizTheme(topicID, quizTopics);
                 questionBankSender.setTopicQuestions(questionsBank);
+                questionBankSender.setTopicID(topicID);
                 Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
             } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();

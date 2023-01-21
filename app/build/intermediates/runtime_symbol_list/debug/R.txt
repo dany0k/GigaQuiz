@@ -2993,11 +2993,9 @@ int id frameLayout 0x7f0a00e0
 int id frost 0x7f0a00e1
 int id fullscreen_header 0x7f0a00e2
 int id gameFragment 0x7f0a00e3
-int id gameOverConstraintLayout 0x7f0a00e4
 int id gameResultFragment 0x7f0a00e5
 int id gameWonConstraintLayout 0x7f0a00e6
 int id geographicalGameFragment 0x7f0a00e7
-int id geographicalResult 0x7f0a00e8
 int id ghost_view 0x7f0a00e9
 int id ghost_view_holder 0x7f0a00ea
 int id gone 0x7f0a00eb
@@ -3160,6 +3158,7 @@ int id radio 0x7f0a0187
 int id ratio 0x7f0a0188
 int id rectangles 0x7f0a0189
 int id registrationButton 0x7f0a018a
+int id result 0x7f0a022c
 int id reverseSawtooth 0x7f0a018b
 int id right 0x7f0a018c
 int id rightToLeft 0x7f0a018d
@@ -3292,8 +3291,6 @@ int id transition_position 0x7f0a020b
 int id transition_scene_layoutid_cache 0x7f0a020c
 int id transition_transform 0x7f0a020d
 int id triangle 0x7f0a020e
-int id tryAgainButton 0x7f0a020f
-int id tryAgainImage 0x7f0a0210
 int id unchecked 0x7f0a0211
 int id uniform 0x7f0a0212
 int id unlabeled 0x7f0a0213
@@ -3463,9 +3460,7 @@ int layout design_text_input_end_icon 0x7f0d002b
 int layout design_text_input_start_icon 0x7f0d002c
 int layout fragment_about 0x7f0d002d
 int layout fragment_game 0x7f0d002e
-int layout fragment_game_over 0x7f0d002f
 int layout fragment_game_result 0x7f0d0030
-int layout fragment_game_won 0x7f0d0031
 int layout fragment_rules 0x7f0d0032
 int layout fragment_title 0x7f0d0033
 int layout fragment_user_edit_profile 0x7f0d0034

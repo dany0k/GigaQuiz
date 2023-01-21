@@ -15,13 +15,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
 import ru.vsu.cs.zmaev.model.QuestionBankSender;
+import ru.vsu.cs.zmaev.model.User;
+import ru.vsu.cs.zmaev.tools.JSONTools;
 
 public class GameFragment extends Fragment {
 
@@ -53,7 +63,7 @@ public class GameFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         questionBankSender = new ViewModelProvider(getActivity()).get(QuestionBankSender.class);
-        questions = questionBankSender.getTopicQuestion();
+        questions = questionBankSender.getTopicQuestions();
 
         randomizeQuestions();
         binding.setGame(GameFragment.this);
@@ -97,6 +107,19 @@ public class GameFragment extends Fragment {
             checkAnswer(button);
             sharedViewModel.setCorrectAnswers(correctAnswersCounter);
             sharedViewModel.setIncorrectAnswers(incorrectAnswersCounter);
+            String userStr = JSONTools.readJsonFile(getContext(), "user.json");
+            System.out.println(userStr);
+            User user = new User();
+            try {
+                user = new ObjectMapper().readValue(userStr, User.class);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            String results = user.getResults();
+            int[] res = JSONTools.fromString(results);
+            res[questionBankSender.getTopicID()] = (int) (correctAnswersCounter * 100 / 10);
+            user.setResults(new Gson().toJson(res));
+            JSONTools.createJsonFile(getContext(), "user.json", user.toJson().toString());
             Navigation.findNavController(view)
                     .navigate(R.id.action_gameFragment_to_gameResultFragment);
         } else {

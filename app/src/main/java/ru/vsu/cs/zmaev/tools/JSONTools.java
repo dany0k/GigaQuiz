@@ -37,4 +37,13 @@ public class JSONTools {
             return false;
         }
     }
+    public static int[] fromString(String string) {
+        String[] strings = string.replace("[", "").replace("]", "").replace("\"", "").split(",");
+        int result[] = new int[strings.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = Integer.parseInt(strings[i]);
+        }
+        return result;
+    }
+
 }

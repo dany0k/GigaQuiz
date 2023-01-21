@@ -13,6 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import ru.vsu.cs.zmaev.databinding.FragmentUserProfileBinding;
 import ru.vsu.cs.zmaev.tools.JSONTools;
 import ru.vsu.cs.zmaev.model.User;
@@ -28,6 +36,7 @@ public class UserProfileFragment extends Fragment {
     public String androidResult;
     public String geographicalResult;
     public Drawable countryIcon;
+    public String res;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,10 +46,12 @@ public class UserProfileFragment extends Fragment {
         String userStr = JSONTools.readJsonFile(getContext(), "user.json");
         User user = new User();
         try {
-            user = new ObjectMapper().readValue(userStr, User.class);
+            ObjectMapper objectMapper = new ObjectMapper();
+            user = objectMapper.readValue(userStr, User.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+        System.out.println(user);
         showProfile(user);
         binding.editProfileButton.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_userProfileFragment_to_userEditProfileFragment);
@@ -50,9 +61,24 @@ public class UserProfileFragment extends Fragment {
 
     private void showProfile(User user) {
         binding.profileUsername.setText(user.getName());
-        androidResult = getResources().getString(R.string.android_result) + " " + user.getAndroidResult() + "%";
-        geographicalResult = getResources().getString(R.string.geographical_result) + " " + user.getGeographicalResult() + "%";
-        setUserFlag(user);
+        binding.result.setText(setUserResult(user));
+//        setUserFlag(user);
+    }
+
+    private String setUserResult(User user) {
+        String[] topics = user.getTopics()
+                .replace("[", "").replace("]", "")
+                .replaceAll("\\\\", "").replaceAll("\"", "")
+                .split(",");
+        int[] results = JSONTools.fromString(user.getResults());
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < results.length; i++) {
+            for (int j = 0; j < 1; j++) {
+                stringBuilder.append(topics[i] + ": " + results[i] + "%");
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

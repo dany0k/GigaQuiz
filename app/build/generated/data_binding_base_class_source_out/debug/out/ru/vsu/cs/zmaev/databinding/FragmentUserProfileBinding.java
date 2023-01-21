@@ -36,9 +36,6 @@ public abstract class FragmentUserProfileBinding extends ViewDataBinding {
   public final ConstraintLayout fragmentUserProfile;
 
   @NonNull
-  public final TextView geographicalResult;
-
-  @NonNull
   public final LinearLayout linearLayout;
 
   @NonNull
@@ -47,24 +44,27 @@ public abstract class FragmentUserProfileBinding extends ViewDataBinding {
   @NonNull
   public final TextView profileUsername;
 
+  @NonNull
+  public final TextView result;
+
   @Bindable
   protected UserProfileFragment mUser;
 
   protected FragmentUserProfileBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView androidResult, ImageView backgroundProfile, ImageView countryIcon,
       ImageButton editProfileButton, ConstraintLayout fragmentUserProfile,
-      TextView geographicalResult, LinearLayout linearLayout, ImageView profileImage,
-      TextView profileUsername) {
+      LinearLayout linearLayout, ImageView profileImage, TextView profileUsername,
+      TextView result) {
     super(_bindingComponent, _root, _localFieldCount);
     this.androidResult = androidResult;
     this.backgroundProfile = backgroundProfile;
     this.countryIcon = countryIcon;
     this.editProfileButton = editProfileButton;
     this.fragmentUserProfile = fragmentUserProfile;
-    this.geographicalResult = geographicalResult;
     this.linearLayout = linearLayout;
     this.profileImage = profileImage;
     this.profileUsername = profileUsername;
+    this.result = result;
   }
 
   public abstract void setUser(@Nullable UserProfileFragment user);
