@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                       
+                                                  
+                                                          
+
+    
+                 
+                       
+                                                  
+           
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" android:tag="layout/fragment_game_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="com.example.android.navigation.InGame">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/questionImage"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/image_header_height"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/horizontal_margin"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:contentDescription="@string/description"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/questionText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/android_category_simple" />
+
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/question_horizontal_margin"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="@dimen/question_horizontal_margin"
+                android:fontFamily="@font/comfortaa"
+                android:tag="binding_1"                       
+                android:textColor="@color/question_text_color"
+                android:textSize="@dimen/question_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/firstAnswerButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionImage"
+                tools:text="What color is the Android mascot?" />
+
+            <Button
+                android:id="@+id/firstAnswerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/vertical_margin"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:tag="binding_2"          
+                app:layout_constraintBottom_toTopOf="@+id/secondAnswerButton"
+                app:layout_constraintTop_toBottomOf="@+id/questionText"
+                tools:text="Green" />
+
+            <Button
+                android:id="@+id/secondAnswerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/vertical_margin"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:tag="binding_3"          
+                app:layout_constraintBottom_toTopOf="@+id/thirdAnswerButton"
+                app:layout_constraintTop_toBottomOf="@+id/firstAnswerButton"
+                tools:text="Yellow" />
+
+            <Button
+                android:id="@+id/thirdAnswerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/vertical_margin"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:tag="binding_4"          
+                app:layout_constraintBottom_toTopOf="@+id/fourthAnswerButton"
+                app:layout_constraintTop_toBottomOf="@+id/secondAnswerButton"
+                tools:text="White" />
+
+            <Button
+                android:id="@+id/fourthAnswerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/vertical_margin"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:tag="binding_5"          
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdAnswerButton"
+                tools:text="Black" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+         

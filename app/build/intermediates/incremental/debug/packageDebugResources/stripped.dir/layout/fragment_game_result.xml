@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+                                                                   
+
+    
+                 
+                            
+                                                        
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameWonConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark" android:tag="layout/fragment_game_result_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="com.example.android.navigation.GameWonFragment">
+
+        <Button
+            android:id="@+id/nextMatchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/button_padding"
+            android:paddingEnd="@dimen/button_padding"
+            android:text="@string/next_match"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:text="@string/your_result"
+            android:textColor="@color/question_text_color"
+            android:fontFamily="@font/comfortaa"
+            android:textSize="30sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-16dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="binding_1"                  
+            android:layout_marginStart="@dimen/vertical_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:textColor="@color/question_text_color"
+            android:fontFamily="@font/comfortaa"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage" />
+
+        <ImageView
+            android:id="@+id/youWinImage"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/game_over_height"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tag="binding_2"                    
+            android:contentDescription="@string/description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

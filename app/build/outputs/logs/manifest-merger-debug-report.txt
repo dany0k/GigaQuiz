@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [androidx.databinding:databinding-adapters:7.3.1] C:\Users\Den\.gradle\caches\transforms-3\41e2233caf88039e2a8ccc2fe035db46\transformed\databinding-adapters-7.3.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.databinding:databinding-runtime:7.3.1] C:\Users\Den\.gradle\caches\transforms-3\f2f03771593b1043a50d45b983a18431\transformed\databinding-runtime-7.3.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.5.3] C:\Users\Den\.gradle\caches\transforms-3\8d52d94764ff88893bf6d04b8310dc47\transformed\navigation-ui-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
@@ -62,31 +62,31 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Den\.gradle\cach
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Den\.gradle\caches\transforms-3\5c31521eb266c26ef211a1f53b56b07e\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Den\.gradle\caches\transforms-3\66860c319137074465b1f3af9d4ca7e4\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Den\.gradle\caches\transforms-3\d1b81e9b9294b0bc78ebcbc0700bfe58\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:1-31:12
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:5:5-66
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:5:5-66
 	android:name
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:7:5-29:19
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:7:5-29:19
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\Den\.gradle\caches\transforms-3\459731560744495d36c7572f4eaf1462\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\Den\.gradle\caches\transforms-3\459731560744495d36c7572f4eaf1462\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Den\.gradle\caches\transforms-3\229612c218d9fe79705dc19c7f400585\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -106,49 +106,49 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Den\.gradle\caches
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\Den\.gradle\caches\transforms-3\87a796fe63836d99a2198ac6a6284cb3\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:12:9-41
 	android:fullBackupContent
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:10:9-54
 	android:roundIcon
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:13:9-54
 	tools:targetApi
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:16:9-29
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:15:9-46
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:15:9-46
 	android:dataExtractionRules
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:9:9-65
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:9:9-65
 activity#ru.vsu.cs.zmaev.MainActivity
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:17:9-28:20
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:17:9-28:20
 	android:exported
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:19:13-36
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:18:13-41
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:18:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:23:27-74
 meta-data#android.app.lib_name
-ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:25:13-27:36
+ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:25:13-27:36
 	android:value
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:27:17-33
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:27:17-33
 	android:name
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml:26:17-52
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml:26:17-52
 uses-sdk
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:databinding-adapters:7.3.1] C:\Users\Den\.gradle\caches\transforms-3\41e2233caf88039e2a8ccc2fe035db46\transformed\databinding-adapters-7.3.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.databinding:databinding-adapters:7.3.1] C:\Users\Den\.gradle\caches\transforms-3\41e2233caf88039e2a8ccc2fe035db46\transformed\databinding-adapters-7.3.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.databinding:databinding-runtime:7.3.1] C:\Users\Den\.gradle\caches\transforms-3\f2f03771593b1043a50d45b983a18431\transformed\databinding-runtime-7.3.1\AndroidManifest.xml:5:5-7:41
@@ -265,16 +265,16 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Den\.gradle\caches\transforms-
 MERGED from [androidx.print:print:1.0.0] C:\Users\Den\.gradle\caches\transforms-3\66860c319137074465b1f3af9d4ca7e4\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Den\.gradle\caches\transforms-3\d1b81e9b9294b0bc78ebcbc0700bfe58\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Den\.gradle\caches\transforms-3\d1b81e9b9294b0bc78ebcbc0700bfe58\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		ADDED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
-		INJECTED from Z:\VSU\3course\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		ADDED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
+		INJECTED from Z:\VSU\3course\Mobile\GigaQuiz\app\src\main\AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Den\.gradle\caches\transforms-3\c03fa7bc00a04a375204b573f0966d9f\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Den\.gradle\caches\transforms-3\0ce9e5f033589fdf0ab757f82f7808ec\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20

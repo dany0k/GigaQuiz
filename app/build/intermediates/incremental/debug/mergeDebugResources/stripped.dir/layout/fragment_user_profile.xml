@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+                                                        
+
+    
+                 
+                       
+                                                         
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragmentUserProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" android:tag="layout/fragment_user_profile_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="ru.vsu.cs.zmaev.UserProfileFragment">
+
+        <ImageView
+            android:id="@+id/backgroundProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/description"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp">
+
+        </ImageView>
+
+        <ImageButton
+            android:id="@+id/editProfileButton"
+            android:layout_width="39dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="5sp"
+            android:background="@drawable/edit_profile"
+            android:contentDescription="@string/description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.206" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description"
+            android:src="@drawable/avatar_male"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.124"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
+            app:layout_constraintVertical_bias="0.213"
+            tools:ignore="MissingConstraints"
+            tools:src="@drawable/avatar_male" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.034"
+            app:layout_constraintStart_toEndOf="@+id/profileImage"
+            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
+            app:layout_constraintVertical_bias="0.207"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/profileUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                android:textColor="@color/question_text_color"
+                android:fontFamily="@font/comfortaa"
+                android:textSize="30sp"
+                tools:text="Даниил" />
+
+            <ImageView
+                android:id="@+id/countryIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10sp"
+                android:contentDescription="@string/description"
+                android:tag="binding_1"          
+                tools:ignore="SmallSp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/profileImage"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:text="@string/categories_result"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/question_text_color"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+
+            <TextView
+                android:id="@+id/androidResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:tag="binding_2"             
+                android:textSize="20sp"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/question_text_color"/>
+
+            <TextView
+                android:id="@+id/geographicalResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:tag="binding_3"                  
+                android:textSize="20sp"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="@color/question_text_color"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

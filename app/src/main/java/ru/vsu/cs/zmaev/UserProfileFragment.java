@@ -12,8 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ru.vsu.cs.zmaev.databinding.FragmentUserProfileBinding;
 import ru.vsu.cs.zmaev.tools.JSONTools;
