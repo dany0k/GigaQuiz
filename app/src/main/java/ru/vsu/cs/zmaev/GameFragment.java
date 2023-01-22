@@ -31,7 +31,6 @@ import ru.vsu.cs.zmaev.model.AnswersViewModel;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
 import ru.vsu.cs.zmaev.model.QuestionBankSender;
 import ru.vsu.cs.zmaev.model.User;
-import ru.vsu.cs.zmaev.tools.JSONTools;
 
 public class GameFragment extends Fragment {
 
@@ -107,19 +106,19 @@ public class GameFragment extends Fragment {
             checkAnswer(button);
             sharedViewModel.setCorrectAnswers(correctAnswersCounter);
             sharedViewModel.setIncorrectAnswers(incorrectAnswersCounter);
-            String userStr = JSONTools.readJsonFile(getContext(), "user.json");
-            System.out.println(userStr);
-            User user = new User();
-            try {
-                user = new ObjectMapper().readValue(userStr, User.class);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
-            String results = user.getResults();
-            int[] res = JSONTools.fromString(results);
-            res[questionBankSender.getTopicID()] = (int) (correctAnswersCounter * 100 / 10);
-            user.setResults(new Gson().toJson(res));
-            JSONTools.createJsonFile(getContext(), "user.json", user.toJson().toString());
+//            String userStr = JSONTools.readJsonFile(getContext(), "user.json");
+//            System.out.println(userStr);
+//            User user = new User();
+//            try {
+//                user = new ObjectMapper().readValue(userStr, User.class);
+//            } catch (JsonProcessingException e) {
+//                e.printStackTrace();
+//            }
+//            String results = user.getResults();
+//            int[] res = JSONTools.fromString(results);
+//            res[questionBankSender.getTopicID()] = (int) (correctAnswersCounter * 100 / 10);
+//            user.setResults(new Gson().toJson(res));
+//            JSONTools.createJsonFile(getContext(), "user.json", user.toJson().toString());
             Navigation.findNavController(view)
                     .navigate(R.id.action_gameFragment_to_gameResultFragment);
         } else {

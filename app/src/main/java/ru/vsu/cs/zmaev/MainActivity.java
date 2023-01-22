@@ -16,7 +16,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
-import ru.vsu.cs.zmaev.tools.DataBaseTools;
 import ru.vsu.cs.zmaev.tools.FileTools;
 import ru.vsu.cs.zmaev.model.MyDrawerController;
 
@@ -29,8 +28,12 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("gigaquiz.db", MODE_PRIVATE, null);
+//        DataBaseTools.createDB(db);
+//        DataBaseTools.populateDB(db);
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+//        deleteDatabase("gigaquiz.db");
         NavController bottomNavController = Navigation.findNavController(this, R.id.myNavHostFragment);
         NavigationUI.setupWithNavController(binding.bottomNavigationView, bottomNavController);
         bottomNavigationView = binding.bottomNavigationView;
@@ -49,25 +52,8 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
         if (!FileTools.isFilePresent(this, "user.json")) {
             setDrawerLocked();
         }
-        // User
-//        FileTools.clearMyFiles(this);
+        setDrawerUnlocked();
         // DataBase
-        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("gigaquiz.db", MODE_PRIVATE, null);
-        DataBaseTools.createDB(db);
-        DataBaseTools.populateDB(db);
-        Cursor query = db.rawQuery("SELECT * FROM answer;", null);
-        while (query.moveToNext()) {
-            System.out.println(query.getString(0) +
-                    query.getString(1) +
-                    query.getString(2) +
-                    query.getString(3));
-        }
-        //        if (query.moveToNext()) {
-//            String name = query.getString(4);
-//            System.out.println("----------------------------");
-//            System.out.println(name);
-//        }
-    deleteDatabase("gigaquiz.db");
     }
 
     @Override

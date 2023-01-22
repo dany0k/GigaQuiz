@@ -1,5 +1,7 @@
 package ru.vsu.cs.zmaev;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -39,10 +41,11 @@ public class TitleFragment extends Fragment {
         questionBankSender = new ViewModelProvider(getActivity()).get(QuestionBankSender.class);
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_title, container, false);
-        List<String> quizTopics = FileTools.readFilesInList(getActivity(), "");
-        if (FileTools.isFilePresent(getContext(), "user.json")) {
-            binding.registrationButton.setVisibility(View.GONE);
-        } else {
+        SQLiteDatabase db = getActivity().getBaseContext().openOrCreateDatabase("gigaquiz.db",
+                getActivity().MODE_PRIVATE, null);
+        // If user not exists register new one
+        Cursor query = db.rawQuery("SELECT * FROM user;", null);
+        if (!query.moveToFirst()) {
             binding.themeTextView.setVisibility(View.GONE);
             binding.topicsSpinner.setVisibility(View.GONE);
             binding.playButton.setVisibility(View.GONE);
@@ -50,18 +53,34 @@ public class TitleFragment extends Fragment {
             binding.registrationButton.setOnClickListener(view -> {
                 Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
             });
+        } else {
         }
-        binding.playButton.setOnClickListener(v -> {
-            try {
-                int topicID = binding.topicsSpinner.getSelectedItemPosition();
-                List<ImageQuestion> questionsBank = getQuizTheme(topicID, quizTopics);
-                questionBankSender.setTopicQuestions(questionsBank);
-                questionBankSender.setTopicID(topicID);
-                Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
-            } catch (IOException | URISyntaxException e) {
-                e.printStackTrace();
-            }
-        });
+//        List<String> quizTopics = FileTools.readFilesInList(getActivity(), "");
+//        SQLiteDatabase db = getActivity().getBaseContext().openOrCreateDatabase("gigaquiz.db", getActivity().MODE_PRIVATE, null);
+//        Cursor query = db.rawQuery("SELECT * FROM user;", null);
+//        if (query.getCount() > 0) {
+//            System.out.println("\n\n\n\nBebis");
+//            binding.registrationButton.setVisibility(View.GONE);
+//        } else {
+//            binding.themeTextView.setVisibility(View.GONE);
+//            binding.topicsSpinner.setVisibility(View.GONE);
+//            binding.playButton.setVisibility(View.GONE);
+//            binding.registrationButton.setVisibility(View.VISIBLE);
+//            binding.registrationButton.setOnClickListener(view -> {
+//                Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
+//            });
+//        }
+//        binding.playButton.setOnClickListener(v -> {
+//            try {
+//                int topicID = binding.topicsSpinner.getSelectedItemPosition();
+//                List<ImageQuestion> questionsBank = getQuizTheme(topicID, quizTopics);
+//                questionBankSender.setTopicQuestions(questionsBank);
+//                questionBankSender.setTopicID(topicID);
+//                Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
+//            } catch (IOException | URISyntaxException e) {
+//                e.printStackTrace();
+//            }
+//        });
 
         return binding.getRoot();
     }

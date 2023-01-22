@@ -1,6 +1,10 @@
 package ru.vsu.cs.zmaev.tools;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+
+import ru.vsu.cs.zmaev.model.User;
 
 public class DataBaseTools {
     public static void populateDB(SQLiteDatabase db) {
@@ -270,7 +274,8 @@ public class DataBaseTools {
                 "icon_name TEXT NOT NULL," +
                 "FOREIGN KEY (topic_id) REFERENCES topic(topic_id));");
         // User Table
-        db.execSQL("CREATE TABLE IF NOT EXISTS user( user_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE IF NOT EXISTS user( " +
+                "user_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "country_id INTEGER NOT NULL," +
                 "result_id INTEGER, " +
                 "question_id INTEGER, " +
@@ -295,4 +300,31 @@ public class DataBaseTools {
                 " country_icon_name TEXT NOT NULL);");
     }
 
+    public static SQLiteDatabase openDataBase(Context context) {
+        return context.openOrCreateDatabase("gigaquiz.db",
+                context.MODE_PRIVATE, null);
+    }
+
+    public static boolean insertUser(SQLiteDatabase db, User user) {
+        ContentValues contentValues = new ContentValues();
+        System.out.println(user.toString());
+        contentValues.put("country_id", user.getCountryID());
+        contentValues.put("result_id", user.getResultID());
+        contentValues.put("question_id", user.getQuestionID());
+        contentValues.put("name", user.getName());
+        contentValues.put("age", user.getAge());
+        contentValues.put("sex", user.getSex());
+        contentValues.put("user_icon_name", user.getUserIconName());
+        long result = db.insert("user", null, contentValues);
+        return result != -1;
+    }
+
+    public static boolean updateUser(SQLiteDatabase db, User user) {
+        ContentValues contentValues = new ContentValues();
+        System.out.println(user.toString());
+        contentValues.put("name", user.getName());
+        // Изменть где user_id
+        long result = db.update("user", contentValues, "user_id" + " = " + 1, null);
+        return result != -1;
+    }
 }

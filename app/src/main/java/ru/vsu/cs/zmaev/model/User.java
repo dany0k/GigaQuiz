@@ -1,37 +1,64 @@
 package ru.vsu.cs.zmaev.model;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Arrays;
-import java.util.List;
-
 
 public class User {
-
+    private int userID;
+    private int countryID;
+    private int resultID;
+    private int questionID;
     private String name;
     private int age;
-    private int progress;
-    private int iconID;
-    private String country;
     private String sex;
-    private String topics;
-    private String results;
-    public User() {
-    }
+    private String userIconName;
 
-    public User(String name, int age, int progress, int iconID, String country, String sex, String topics, String results) {
+    public User(int userID, int countryID, int resultID, int questionID, String name, int age, String sex, String userIconName) {
+        this.userID = userID;
+        this.countryID = countryID;
+        this.resultID = resultID;
+        this.questionID = questionID;
         this.name = name;
         this.age = age;
-        this.progress = progress;
-        this.iconID = iconID;
-        this.country = country;
         this.sex = sex;
-        this.topics = topics;
-        this.results = results;
+        this.userIconName = userIconName;
+    }
+
+    public User() {
+        userID = 1;
+        resultID = 0;
+        questionID = 0;
+        userIconName = "ic_baseline_person_24";
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public int getCountryID() {
+        return countryID;
+    }
+
+    public void setCountryID(int countryID) {
+        this.countryID = countryID;
+    }
+
+    public int getResultID() {
+        return resultID;
+    }
+
+    public void setResultID(int resultID) {
+        this.resultID = resultID;
+    }
+
+    public int getQuestionID() {
+        return questionID;
+    }
+
+    public void setQuestionID(int questionID) {
+        this.questionID = questionID;
     }
 
     public String getName() {
@@ -50,30 +77,6 @@ public class User {
         this.age = age;
     }
 
-    public int getProgress() {
-        return progress;
-    }
-
-    public void setProgress(int progress) {
-        this.progress = progress;
-    }
-
-    public int getIconID() {
-        return iconID;
-    }
-
-    public void setIconID(int iconID) {
-        this.iconID = iconID;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getSex() {
         return sex;
     }
@@ -82,50 +85,26 @@ public class User {
         this.sex = sex;
     }
 
-    public String getTopics() {
-        return topics;
+    public String getUserIconName() {
+        return userIconName;
     }
 
-    public void setTopics(String topics) {
-        this.topics = topics;
-    }
-
-    public String getResults() {
-        return results;
-    }
-
-    public void setResults(String results) {
-        this.results = results;
-    }
-
-    public JSONObject toJson() {
-        JSONObject userJSON = new JSONObject();
-        try {
-            userJSON.put("name", name);
-            userJSON.put("age", age);
-            userJSON.put("progress", progress);
-            userJSON.put("iconID", iconID);
-            userJSON.put("country", country);
-            userJSON.put("sex", sex);
-            userJSON.put("topics", new Gson().toJson(topics).replaceAll("\\\\", ""));
-            userJSON.put("results", new Gson().toJson(results));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return userJSON;
+    public void setUserIconName(String userIconName) {
+        this.userIconName = userIconName;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "userID=" + userID +
+                ", countryID=" + countryID +
+                ", resultID=" + resultID +
+                ", questionID=" + questionID +
+                ", name='" + name + '\'' +
                 ", age=" + age +
-                ", progress=" + progress +
-                ", iconID=" + iconID +
-                ", country='" + country + '\'' +
                 ", sex='" + sex + '\'' +
-                ", topics=" + topics +
-                ", results=" + results +
+                ", userIconName='" + userIconName + '\'' +
                 '}';
     }
+
 }
