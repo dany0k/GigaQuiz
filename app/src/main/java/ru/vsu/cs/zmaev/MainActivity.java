@@ -1,5 +1,7 @@
 package ru.vsu.cs.zmaev;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 import ru.vsu.cs.zmaev.databinding.ActivityMainBinding;
+import ru.vsu.cs.zmaev.tools.DataBaseTools;
 import ru.vsu.cs.zmaev.tools.FileTools;
 import ru.vsu.cs.zmaev.model.MyDrawerController;
 
@@ -48,6 +51,23 @@ public class MainActivity extends AppCompatActivity implements MyDrawerControlle
         }
         // User
 //        FileTools.clearMyFiles(this);
+        // DataBase
+        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("gigaquiz.db", MODE_PRIVATE, null);
+        DataBaseTools.createDB(db);
+        DataBaseTools.populateDB(db);
+        Cursor query = db.rawQuery("SELECT * FROM answer;", null);
+        while (query.moveToNext()) {
+            System.out.println(query.getString(0) +
+                    query.getString(1) +
+                    query.getString(2) +
+                    query.getString(3));
+        }
+        //        if (query.moveToNext()) {
+//            String name = query.getString(4);
+//            System.out.println("----------------------------");
+//            System.out.println(name);
+//        }
+    deleteDatabase("gigaquiz.db");
     }
 
     @Override
