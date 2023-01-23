@@ -42,9 +42,11 @@
     <string name="title_play_science_quiz">Наука</string>
 
     <string-array name="countriesNames">
-        <item>Азербайджан</item>
+        <item>Не выбрано</item>
         <item>Армения</item>
+        <item>Азербайджан</item>
         <item>Беларусь</item>
+        <item>Грузия</item>
         <item>Казахстан</item>
         <item>Кыргызстан</item>
         <item>Молдова</item>
@@ -53,8 +55,6 @@
         <item>Туркменистан</item>
         <item>Узбекистан</item>
         <item>Украина</item>
-
-        <item>Грузия</item>
     </string-array>
 
     <string-array name="age">

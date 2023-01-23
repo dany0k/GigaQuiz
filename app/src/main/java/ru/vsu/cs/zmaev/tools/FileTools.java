@@ -70,7 +70,6 @@ public class FileTools {
                     questionAnswers = splitQuestion[1];
                     questionImageName = splitQuestion[2].trim();
                     int imageID = context.getResources().getIdentifier(questionImageName, "drawable", context.getPackageName());
-                    System.out.println(imageID);
                     String[] answers = questionAnswers.split(";");
                     ImageQuestion question = new ImageQuestion(questionName, Arrays.asList(answers), imageID);
                     questionsBank.add(question);

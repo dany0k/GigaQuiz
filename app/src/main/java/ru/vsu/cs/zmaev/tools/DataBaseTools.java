@@ -2,7 +2,10 @@ package ru.vsu.cs.zmaev.tools;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.Currency;
 
 import ru.vsu.cs.zmaev.model.User;
 
@@ -316,15 +319,31 @@ public class DataBaseTools {
         contentValues.put("sex", user.getSex());
         contentValues.put("user_icon_name", user.getUserIconName());
         long result = db.insert("user", null, contentValues);
+        addResults(db, user.getUserID());
         return result != -1;
     }
 
-    public static boolean updateUser(SQLiteDatabase db, User user) {
+    public static void updateUser(SQLiteDatabase db, User user) {
         ContentValues contentValues = new ContentValues();
-        System.out.println(user.toString());
         contentValues.put("name", user.getName());
+        contentValues.put("age", user.getAge());
+        contentValues.put("sex", user.getSex());
+        contentValues.put("country_id", user.getCountryID());
         // Изменть где user_id
-        long result = db.update("user", contentValues, "user_id" + " = " + 1, null);
-        return result != -1;
+         db.update("user", contentValues, "user_id" + " = " + user.getUserID(), null);
+    }
+
+    private static void addResults(SQLiteDatabase db, int userId) {
+        ContentValues contentValues = new ContentValues();
+        Cursor queryTopic = db.rawQuery("SELECT * FROM topic;", null);
+        int defaultPercentage = 0;
+        while (queryTopic.moveToNext()) {
+            contentValues.put("topic_id", queryTopic.getString(0));
+            contentValues.put("user_id", userId);
+            contentValues.put("percentage", defaultPercentage);
+            db.insert("result", null, contentValues);
+            contentValues.clear();
+        }
+//        contentValues.put("topic_id", );
     }
 }

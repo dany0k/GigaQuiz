@@ -85,7 +85,6 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="10sp"
                 android:contentDescription="@string/description"
-                android:tag="binding_1"          
                 tools:ignore="SmallSp" />
 
         </LinearLayout>

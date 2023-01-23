@@ -14,11 +14,12 @@ public class FragmentUserProfileBindingImpl extends FragmentUserProfileBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.backgroundProfile, 2);
-        sViewsWithIds.put(R.id.editProfileButton, 3);
-        sViewsWithIds.put(R.id.profileImage, 4);
-        sViewsWithIds.put(R.id.linearLayout, 5);
-        sViewsWithIds.put(R.id.profileUsername, 6);
+        sViewsWithIds.put(R.id.backgroundProfile, 1);
+        sViewsWithIds.put(R.id.editProfileButton, 2);
+        sViewsWithIds.put(R.id.profileImage, 3);
+        sViewsWithIds.put(R.id.linearLayout, 4);
+        sViewsWithIds.put(R.id.profileUsername, 5);
+        sViewsWithIds.put(R.id.countryIcon, 6);
         sViewsWithIds.put(R.id.androidResult, 7);
         sViewsWithIds.put(R.id.result, 8);
     }
@@ -34,16 +35,15 @@ public class FragmentUserProfileBindingImpl extends FragmentUserProfileBinding  
     private FragmentUserProfileBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.TextView) bindings[7]
-            , (android.widget.ImageView) bindings[2]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.ImageButton) bindings[3]
+            , (android.widget.ImageView) bindings[6]
+            , (android.widget.ImageButton) bindings[2]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
-            , (android.widget.LinearLayout) bindings[5]
-            , (android.widget.ImageView) bindings[4]
-            , (android.widget.TextView) bindings[6]
+            , (android.widget.LinearLayout) bindings[4]
+            , (android.widget.ImageView) bindings[3]
+            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[8]
             );
-        this.countryIcon.setTag(null);
         this.fragmentUserProfile.setTag(null);
         setRootTag(root);
         // listeners
@@ -82,11 +82,6 @@ public class FragmentUserProfileBindingImpl extends FragmentUserProfileBinding  
 
     public void setUser(@Nullable ru.vsu.cs.zmaev.UserProfileFragment User) {
         this.mUser = User;
-        synchronized(this) {
-            mDirtyFlags |= 0x1L;
-        }
-        notifyPropertyChanged(BR.user);
-        super.requestRebind();
     }
 
     @Override
@@ -103,24 +98,7 @@ public class FragmentUserProfileBindingImpl extends FragmentUserProfileBinding  
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        ru.vsu.cs.zmaev.UserProfileFragment user = mUser;
-        android.graphics.drawable.Drawable userCountryIcon = null;
-
-        if ((dirtyFlags & 0x3L) != 0) {
-
-
-
-                if (user != null) {
-                    // read user.countryIcon
-                    userCountryIcon = user.countryIcon;
-                }
-        }
         // batch finished
-        if ((dirtyFlags & 0x3L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.ImageViewBindingAdapter.setImageDrawable(this.countryIcon, userCountryIcon);
-        }
     }
     // Listener Stub Implementations
     // callback impls

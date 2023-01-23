@@ -40,7 +40,6 @@ public class UserEditProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_edit_profile, container, false);
 
-
         SQLiteDatabase db = DataBaseTools.openDataBase(getContext());
         // If user not exist create new one and add to db
         Cursor query = db.rawQuery("SELECT * FROM user;", null);
@@ -60,35 +59,32 @@ public class UserEditProfileFragment extends Fragment {
             });
             return binding.getRoot();
         }
+        loadUserInf();
         binding.submitButton.setOnClickListener(v -> {
             User newUser = new User();
             validateUser(newUser);
-            boolean isUpdated = DataBaseTools.updateUser(db, newUser);
-            if (isUpdated) {
-                System.out.println("Updated");
-            } else {
-                System.out.println("FAILED");
-            }
+            DataBaseTools.updateUser(db, newUser);
             Navigation.findNavController(v).navigate(R.id.action_userEditProfileFragment_to_userProfileFragment);
         });
 
         return binding.getRoot();
     }
 
-//    private void loadUserInf(User user) {
-//        binding.editName.setText(user.getName());
-//        binding.countrySpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.countriesNames)).indexOf(user.getCountry()));
-//        binding.ageSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.age)).indexOf(Integer.toString(user.getAge())));
-//        binding.sexSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.sex)).indexOf(user.getSex()));
-//    }
-
+    private void loadUserInf() {
+        SQLiteDatabase db = DataBaseTools.openDataBase(getContext());
+        Cursor query = db.rawQuery("SELECT * FROM user;", null);
+        if (query.moveToFirst()) {
+            binding.editName.setText(query.getString(4));
+            binding.countrySpinner.setSelection(Integer.parseInt(query.getString(1)));
+            binding.sexSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.sex)).indexOf(query.getString(6)));
+            binding.ageSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.age)).indexOf(query.getString(5)));
+        }
+    }
 
     private void validateUser(User user) {
         user.setName(binding.editName.getText().toString());
         user.setCountryID(binding.countrySpinner.getSelectedItemPosition());
         user.setAge(Integer.parseInt(binding.ageSpinner.getSelectedItem().toString()));
         user.setSex(binding.sexSpinner.getSelectedItem().toString());
-        System.out.println("\n\n");
-        System.out.println(user.toString());
     }
 }
