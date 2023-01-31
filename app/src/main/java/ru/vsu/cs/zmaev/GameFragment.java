@@ -15,34 +15,27 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
 import ru.vsu.cs.zmaev.model.QuestionBankSender;
-import ru.vsu.cs.zmaev.model.User;
 
 public class GameFragment extends Fragment {
 
     private static final int DELAY = 500;
 
+    private static final int FIRST_ANSWER_SELECTED = 0;
+    private static final int SECOND_ANSWER_SELECTED = 1;
+    private static final int THIRD_ANSWER_SELECTED = 2;
+    private static final int FOURTH_ANSWER_SELECTED = 3;
+
     FragmentGameBinding binding = null;
 
     public AnswersViewModel sharedViewModel;
     private QuestionBankSender questionBankSender;
-    public GameFragment() {
-        super(R.layout.fragment_game);
-    }
 
     List<ImageQuestion> questions;
 
@@ -55,31 +48,36 @@ public class GameFragment extends Fragment {
     private int incorrectAnswersCounter = 0;
     private int answerIndex;
 
+    public GameFragment() {
+        super(R.layout.fragment_game);
+    }
+
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         questionBankSender = new ViewModelProvider(getActivity()).get(QuestionBankSender.class);
         questions = questionBankSender.getTopicQuestions();
-
         randomizeQuestions();
         binding.setGame(GameFragment.this);
         binding.firstAnswerButton.setOnClickListener(v -> {
-            answerIndex = 0;
+            answerIndex = FIRST_ANSWER_SELECTED;
             precessButton(v, binding.firstAnswerButton);
         });
         binding.secondAnswerButton.setOnClickListener(v -> {
-            answerIndex = 1;
+            answerIndex = SECOND_ANSWER_SELECTED;
             precessButton(v, binding.secondAnswerButton);
         });
         binding.thirdAnswerButton.setOnClickListener(v -> {
-            answerIndex = 2;
+            answerIndex = THIRD_ANSWER_SELECTED;
             precessButton(v, binding.thirdAnswerButton);
         });
         binding.fourthAnswerButton.setOnClickListener(v -> {
-            answerIndex = 3;
+            answerIndex = FOURTH_ANSWER_SELECTED;
             precessButton(v, binding.fourthAnswerButton);
         });
 
@@ -125,12 +123,16 @@ public class GameFragment extends Fragment {
         if (answers.get(answerIndex).equals(correctAnswer)) {
             button.setBackgroundColor(getResources().getColor(R.color.correctAnswer));
             Handler handler = new Handler();
-            handler.postDelayed(() -> button.setBackgroundColor(getResources().getColor(R.color.colorSecondaryDark)), DELAY);
+            handler.postDelayed(() ->
+                    button.setBackgroundColor(
+                            getResources().getColor(R.color.colorSecondaryDark)), DELAY);
             correctAnswersCounter++;
         } else {
             button.setBackgroundColor(getResources().getColor(R.color.incorrectAnswer));
             Handler handler = new Handler();
-            handler.postDelayed(() -> button.setBackgroundColor(getResources().getColor(R.color.colorSecondaryDark)), DELAY);
+            handler.postDelayed(() ->
+                    button.setBackgroundColor(
+                            getResources().getColor(R.color.colorSecondaryDark)), DELAY);
             incorrectAnswersCounter++;
         }
     }
@@ -141,7 +143,8 @@ public class GameFragment extends Fragment {
     }
 
     private void setQuestion() {
-        currentQuestion = new ImageQuestion(questions.get(questionIndex).getText(), questions.get(questionIndex).getAnswers(),
+        currentQuestion = new ImageQuestion(
+                questions.get(questionIndex).getText(), questions.get(questionIndex).getAnswers(),
                 questions.get(questionIndex).getDrawableID());
         binding.questionImage.setImageResource(currentQuestion.getDrawableID());
         correctAnswer = currentQuestion.getAnswers().get(0);

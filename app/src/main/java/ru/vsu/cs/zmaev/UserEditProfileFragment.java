@@ -1,8 +1,5 @@
 package ru.vsu.cs.zmaev;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -13,16 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-
-import java.sql.Connection;
 import java.util.Arrays;
-import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentUserEditProfileBinding;
-import ru.vsu.cs.zmaev.tools.DataBaseTools;
+import ru.vsu.cs.zmaev.tools.DataBaseHelper;
 import ru.vsu.cs.zmaev.model.User;
 
 
@@ -36,19 +27,19 @@ public class UserEditProfileFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_edit_profile, container, false);
-
-        SQLiteDatabase db = DataBaseTools.openDataBase(getContext());
+        binding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_user_edit_profile, container, false);
+        DataBaseHelper dataBaseHelper = new DataBaseHelper((MainActivity) getActivity());
         // If user not exist create new one and add to db
-        Cursor query = db.rawQuery("SELECT * FROM user;", null);
-        if (!query.moveToFirst()) {
+        if (dataBaseHelper.isUserExists()) {
             ((MainActivity) getActivity()).setDrawerLocked();
             binding.submitButton.setOnClickListener(v -> {
                 User newUser = new User();
                 validateUser(newUser);
-                boolean isInserted = DataBaseTools.insertUser(db, newUser);
+                boolean isInserted = dataBaseHelper.insertUser(newUser);
                 if (isInserted) {
                     System.out.println("DATA INSERTED");
                 } else {
@@ -59,26 +50,25 @@ public class UserEditProfileFragment extends Fragment {
             });
             return binding.getRoot();
         }
-        loadUserInf();
+        loadUserInf(dataBaseHelper);
         binding.submitButton.setOnClickListener(v -> {
             User newUser = new User();
             validateUser(newUser);
-            DataBaseTools.updateUser(db, newUser);
+            dataBaseHelper.updateUser(newUser);
             Navigation.findNavController(v).navigate(R.id.action_userEditProfileFragment_to_userProfileFragment);
         });
 
         return binding.getRoot();
     }
 
-    private void loadUserInf() {
-        SQLiteDatabase db = DataBaseTools.openDataBase(getContext());
-        Cursor query = db.rawQuery("SELECT * FROM user;", null);
-        if (query.moveToFirst()) {
-            binding.editName.setText(query.getString(4));
-            binding.countrySpinner.setSelection(Integer.parseInt(query.getString(1)));
-            binding.sexSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.sex)).indexOf(query.getString(6)));
-            binding.ageSpinner.setSelection(Arrays.asList(getResources().getStringArray(R.array.age)).indexOf(query.getString(5)));
-        }
+    private void loadUserInf(DataBaseHelper dataBaseHelper) {
+        String[] userInf = dataBaseHelper.selectUser();
+        binding.editName.setText(userInf[0]);
+        binding.countrySpinner.setSelection(Integer.parseInt(userInf[1]));
+        binding.sexSpinner.setSelection(Arrays.asList(
+                getResources().getStringArray(R.array.sex)).indexOf(userInf[2]));
+        binding.ageSpinner.setSelection(Arrays.asList(
+                getResources().getStringArray(R.array.age)).indexOf(userInf[3]));
     }
 
     private void validateUser(User user) {
