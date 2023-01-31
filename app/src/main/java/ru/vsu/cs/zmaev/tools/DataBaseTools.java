@@ -5,8 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Currency;
+import java.util.List;
 
+import ru.vsu.cs.zmaev.model.ImageQuestion;
 import ru.vsu.cs.zmaev.model.User;
 
 public class DataBaseTools {
@@ -333,17 +337,75 @@ public class DataBaseTools {
          db.update("user", contentValues, "user_id" + " = " + user.getUserID(), null);
     }
 
-    private static void addResults(SQLiteDatabase db, int userId) {
+    public static void checkResults() {
+
+    }
+
+    private static void addResults(SQLiteDatabase db, int userID) {
         ContentValues contentValues = new ContentValues();
         Cursor queryTopic = db.rawQuery("SELECT * FROM topic;", null);
         int defaultPercentage = 0;
         while (queryTopic.moveToNext()) {
             contentValues.put("topic_id", queryTopic.getString(0));
-            contentValues.put("user_id", userId);
+            contentValues.put("user_id", userID);
             contentValues.put("percentage", defaultPercentage);
             db.insert("result", null, contentValues);
             contentValues.clear();
         }
-//        contentValues.put("topic_id", );
+    }
+
+    public static void addResult(SQLiteDatabase db, int topicID, int percentage) {
+        ContentValues contentValues = new ContentValues();
+        String query = "SELECT percentage FROM result WHERE topic_id = ?;";
+        Cursor cursor = db.rawQuery(query, new String[] {String.valueOf(topicID)});
+        if (cursor.moveToFirst()) {
+            int prevPercentage = Integer.parseInt(cursor.getString(0));
+            if (prevPercentage > percentage) {
+                return;
+            }
+            contentValues.put("percentage", percentage);
+            db.update("result", contentValues, "topic_id" + " = " + topicID, null);
+            contentValues.clear();
+        }
+    }
+
+    public static List<ImageQuestion> getQuestionsBank(Context context, SQLiteDatabase db, int topicID) {
+        List<ImageQuestion> questionsBank = new ArrayList<>();
+        String questionQuery = "SELECT question_id, question_text, icon_name FROM question WHERE topic_id = ?";
+        Cursor questionCursor = db.rawQuery(questionQuery, new String[] {String.valueOf(topicID)});
+        String questionID;
+        String questionText;
+        String iconName;
+        int iconID;
+        List<String> answers;
+        while (questionCursor.moveToNext()) {
+            questionID = questionCursor.getString(0);
+            questionText = questionCursor.getString(1);
+            iconName = questionCursor.getString(2);
+            iconID = context.getResources().getIdentifier(iconName, "drawable", context.getPackageName());
+            String answersQuery = "SELECT first_answer, second_answer, third_answer, fourth_answer" +
+                    " FROM answer WHERE topic_id = ? AND question_id = ?";
+            Cursor answersCursor = db.rawQuery(answersQuery, new String[] {String.valueOf(topicID),
+            questionID});
+            while (answersCursor.moveToNext()) {
+                String firstAnswer = answersCursor.getString(0);
+                String secondAnswer = answersCursor.getString(1);
+                String thirdAnswer = answersCursor.getString(2);
+                String fourthAnswer = answersCursor.getString(3);
+                answers = Arrays.asList(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
+                ImageQuestion question = new ImageQuestion(questionText, answers, iconID);
+                questionsBank.add(question);
+            }
+        }
+        return questionsBank;
+    }
+
+    public static String[] getTopics(SQLiteDatabase db) {
+        String[] topics = new String[4];
+        Cursor query = db.rawQuery("SELECT topic_name FROM topic;", null);
+        for (int i = 0; i < topics.length && query.moveToNext(); i++) {
+            topics[i] = query.getString(0);
+        }
+        return topics;
     }
 }

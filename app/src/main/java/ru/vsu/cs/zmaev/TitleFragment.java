@@ -14,14 +14,15 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
+import java.util.Arrays;
 import java.util.List;
 
 import ru.vsu.cs.zmaev.databinding.FragmentTitleBinding;
 import ru.vsu.cs.zmaev.model.ImageQuestion;
-import ru.vsu.cs.zmaev.tools.FileTools;
+import ru.vsu.cs.zmaev.tools.DataBaseTools;
 import ru.vsu.cs.zmaev.model.QuestionBankSender;
 
 public class TitleFragment extends Fragment {
@@ -43,6 +44,11 @@ public class TitleFragment extends Fragment {
                 inflater, R.layout.fragment_title, container, false);
         SQLiteDatabase db = getActivity().getBaseContext().openOrCreateDatabase("gigaquiz.db",
                 getActivity().MODE_PRIVATE, null);
+        Spinner topicSpinner = binding.topicsSpinner;
+        String[] topics = DataBaseTools.getTopics(db);
+        ArrayAdapter<String> adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, topics);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        topicSpinner.setAdapter(adapter);
         // If user not exists register new one
         Cursor query = db.rawQuery("SELECT * FROM user;", null);
         if (!query.moveToFirst()) {
@@ -54,38 +60,14 @@ public class TitleFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
             });
         } else {
+            binding.playButton.setOnClickListener(v -> {
+                int topicID = binding.topicsSpinner.getSelectedItemPosition() + 1;
+                List<ImageQuestion> questionsBank = DataBaseTools.getQuestionsBank(getActivity(), db, topicID);
+                questionBankSender.setTopicQuestions(questionsBank);
+                questionBankSender.setTopicID(topicID);
+                Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
+            });
         }
-//        List<String> quizTopics = FileTools.readFilesInList(getActivity(), "");
-//        SQLiteDatabase db = getActivity().getBaseContext().openOrCreateDatabase("gigaquiz.db", getActivity().MODE_PRIVATE, null);
-//        Cursor query = db.rawQuery("SELECT * FROM user;", null);
-//        if (query.getCount() > 0) {
-//            System.out.println("\n\n\n\nBebis");
-//            binding.registrationButton.setVisibility(View.GONE);
-//        } else {
-//            binding.themeTextView.setVisibility(View.GONE);
-//            binding.topicsSpinner.setVisibility(View.GONE);
-//            binding.playButton.setVisibility(View.GONE);
-//            binding.registrationButton.setVisibility(View.VISIBLE);
-//            binding.registrationButton.setOnClickListener(view -> {
-//                Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_userEditProfileFragment);
-//            });
-//        }
-//        binding.playButton.setOnClickListener(v -> {
-//            try {
-//                int topicID = binding.topicsSpinner.getSelectedItemPosition();
-//                List<ImageQuestion> questionsBank = getQuizTheme(topicID, quizTopics);
-//                questionBankSender.setTopicQuestions(questionsBank);
-//                questionBankSender.setTopicID(topicID);
-//                Navigation.findNavController(v).navigate(R.id.action_titleFragment_to_gameFragment);
-//            } catch (IOException | URISyntaxException e) {
-//                e.printStackTrace();
-//            }
-//        });
-
         return binding.getRoot();
-    }
-
-    private List<ImageQuestion> getQuizTheme(int topicID, List<String> quizTopics) throws IOException, URISyntaxException {
-        return FileTools.parseQuestionsFromTxt(getActivity(), quizTopics.get(topicID));
     }
 }

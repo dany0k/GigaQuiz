@@ -1,5 +1,7 @@
 package ru.vsu.cs.zmaev;
 
+import android.annotation.SuppressLint;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -16,6 +18,7 @@ import android.view.ViewGroup;
 
 import ru.vsu.cs.zmaev.databinding.FragmentGameResultBinding;
 import ru.vsu.cs.zmaev.model.AnswersViewModel;
+import ru.vsu.cs.zmaev.tools.DataBaseTools;
 
 public class GameResultFragment extends Fragment {
 
@@ -35,10 +38,14 @@ public class GameResultFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game_result, container, false);
         ((MainActivity) getActivity()).setDrawerLocked();
+        SQLiteDatabase db = DataBaseTools.openDataBase(getContext());
         sharedViewModel = new ViewModelProvider(getActivity()).get(AnswersViewModel.class);
         correctAnswersCounter = sharedViewModel.getCorrectAnswers();
         incorrectAnswersCounter = sharedViewModel.getIncorrectAnswers();
+        int topicID = sharedViewModel.getTopicID();
+        int percentage = correctAnswersCounter * 100 / (correctAnswersCounter + incorrectAnswersCounter);
         binding.nextMatchButton.setOnClickListener(v -> {
+            DataBaseTools.addResult(db, topicID, percentage);
             Navigation.findNavController(v).navigate(R.id.action_gameResultFragment_to_titleFragment);
         });
         return binding.getRoot();
@@ -62,6 +69,7 @@ public class GameResultFragment extends Fragment {
         return "Верные ответы: " + correctAnswersCounter + "\n" + "Неверные ответы: " + incorrectAnswersCounter;
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     public Drawable resultDrawable() {
         if (incorrectAnswersCounter > correctAnswersCounter) {
             return getResources().getDrawable(R.drawable.lose);
